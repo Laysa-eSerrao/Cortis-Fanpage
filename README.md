@@ -84,7 +84,7 @@ O que ainda **falta preencher** hoje em [script.js](script.js) (só o que está 
 - URLs de streaming (`streamLinks[].url`) — hoje são buscas genéricas; trocar pelas oficiais
 - Links do rodapé em [index.html](index.html) — os `href="#"` ainda são placeholders
 - Guia "Como apoiar" — confirmar os canais oficiais do grupo
-- `og:image` / `og:url` no `<head>` de [index.html](index.html) — para quando publicar
+- `og:image` no `<head>` de [index.html](index.html) — falta uma imagem oficial (o `og:url` já aponta para o GitHub Pages)
 
 ---
 
