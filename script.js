@@ -156,7 +156,7 @@ const timeline = [
   { year: "03/2026", event: "2 milhões de cópias", desc: "COLOR OUTSIDE THE LINES é certificado em 2 milhões de cópias.", badge: "2M cópias" },
   { year: "20/04/2026", event: "Pré-lançamento de “REDRED”", desc: "REDRED, faixa-título do 2º EP, é pré-lançada.", badge: "Pré-lançamento" },
   { year: "04/05/2026", event: "2º EP: GREENGREEN", desc: "Segundo EP, com faixa-título REDRED. Vendeu +1,1 milhão de cópias no 1º dia e estreou em #3 na Billboard 200.", badge: "Billboard #3" },
-  { year: "2025–2026", event: "Chuva de prêmios de novato", desc: "O grupo acumula <strong>7 troféus</strong> (6 de novato + 1 de performance): Global Rookie (TikTok Awards Korea), Best New Artist (MAMA), Rookie of the Year e Best Performance (Asia Artist Awards), Rookie Artist of the Year (Golden Disc), Rookie of the Year (Hanteo) e K-Pop Best New Artist (iHeartRadio).", badge: "7 prêmios" },
+  { year: "2025–2026", event: "22 troféus e o grand slam de “REDRED”", desc: "Somando programas musicais e cerimônias, o CORTIS chega a <strong>22 troféus</strong>. “REDRED” fez o <strong>grand slam</strong> — venceu nos 5 principais programas — com <strong>11 vitórias</strong>, o 2º maior recorde de vitórias em music shows do ano até então, atrás só do BTS (14). A 1ª vitória veio em 30/04/2026, dez dias após o pré-lançamento.", badge: "Grand slam" },
   { year: "08/07/2026", event: "1ª turnê: PUT YOUR PHONE DOWN", desc: "É anunciada a <strong>CORTIS TOUR — PUT YOUR PHONE DOWN</strong>, com etapas na Coreia, América do Norte e Japão (PIA Arena MM, Kanagawa, em 4, 5 e 6 de setembro). O título convida a viver o show no presente, sem tela.", badge: "Turnê" }
 ];
 
@@ -181,7 +181,7 @@ const curiosidades = [
   { tag: "Billboard", text: "O 1º EP <strong>COLOR OUTSIDE THE LINES</strong> estreou em <strong>#15 na Billboard 200</strong>; o 2º EP <strong>GREENGREEN</strong> subiu para <strong>#3</strong>." },
   { tag: "GREENGREEN", text: "O EP <strong>GREENGREEN</strong> vendeu <strong>+1,1 milhão de cópias no 1º dia</strong> de lançamento." },
   { tag: "Streams", text: "“GO!”, “What You Want” e “FaSHioN” passaram de <strong>400 milhões de streams</strong> no Spotify em 5 meses." },
-  { tag: "Prêmios", text: "Até julho de 2026, o CORTIS soma <strong>7 prêmios</strong> (6 de novato + 1 de performance): Global Rookie (TikTok Awards Korea, out/2025); Best New Artist (MAMA, nov/2025); Rookie of the Year e Best Performance (Asia Artist Awards, dez/2025); Rookie Artist of the Year (Golden Disc, jan/2026); Rookie of the Year (Hanteo, fev/2026); e K-Pop Best New Artist (iHeartRadio, mar/2026). <em>“GO!”</em> também foi indicada a Favorite TikTok Dance no iHeartRadio, mas não venceu." },
+  { tag: "Prêmios", text: "Até 16/07/2026, o CORTIS soma <strong>22 troféus</strong>: <strong>11 vitórias</strong> de “REDRED” em programas musicais (com <strong>grand slam</strong> nos 5 principais) + <strong>11 prêmios</strong> em cerimônias. Veja a lista completa na seção Prêmios." },
   { tag: "2 milhões", text: "Em março de 2026, o primeiro EP foi certificado em <strong>2 milhões de cópias</strong>." },
   { tag: "Grupo internacional", text: "<strong>Martin</strong> é coreano-canadense e <strong>James</strong> é tailandês-taiwanês (nasceu em Hong Kong, cresceu em Taipei) e fala 5 línguas." },
   { tag: "Do esporte ao palco", text: "<strong>Keonho</strong>, o maknae, foi <strong>nadador competitivo</strong> antes de se tornar idol." },
@@ -190,6 +190,39 @@ const curiosidades = [
   { tag: "OST de cinema", text: "O grupo assinou a OST <em>“Mention Me”</em>, do filme <strong>GOAT</strong>." },
   { tag: "Cortis Ball", text: "O merch oficial do grupo inclui as <strong>Cortis Ball</strong> — pelúcias/bolinhas que representam o CORTIS." }
 ];
+
+/* ── Prêmios (contagem até 16/07/2026) ── */
+const premios = {
+  total: 22,
+  // A) 11 vitórias de "REDRED" em programas musicais
+  musicShows: [
+    { n: "1ª", date: "30/04/2026", program: "M Countdown" },
+    { n: "2ª", date: "07/05/2026", program: "M Countdown" },
+    { n: "3ª", date: "13/05/2026", program: "Show Champion" },
+    { n: "4ª", date: "14/05/2026", program: "M Countdown" },
+    { n: "5ª", date: "15/05/2026", program: "Music Bank" },
+    { n: "6ª", date: "16/05/2026", program: "Show! Music Core" },
+    { n: "7ª", date: "17/05/2026", program: "Inkigayo" },
+    { n: "8ª", date: "23/05/2026", program: "Show! Music Core" },
+    { n: "9ª", date: "24/05/2026", program: "Inkigayo" },
+    { n: "10ª", date: "30/05/2026", program: "Show! Music Core" },
+    { n: "11ª", date: "31/05/2026", program: "Inkigayo" }
+  ],
+  // B) 11 prêmios em cerimônias anuais/institucionais
+  cerimonias: [
+    { year: "2025", event: "TikTok Awards Korea", award: "Global Rookie Award" },
+    { year: "2025", event: "MAMA Awards", award: "Best New Artist" },
+    { year: "2025", event: "Asia Artist Awards", award: "Rookie of the Year — Singer" },
+    { year: "2025", event: "Asia Artist Awards", award: "Best Performance" },
+    { year: "2026", event: "Korea First Brand Awards (Coreia)", award: "Rookie Male Idol", confirmar: true },       // CONFIRMAR: fonte não-independente
+    { year: "2026", event: "Korea First Brand Awards (Vietnã)", award: "Male Rookie Idol", confirmar: true },      // CONFIRMAR: fonte não-independente
+    { year: "2026", event: "Korea First Brand Awards (Indonésia)", award: "Male Rookie Idol", confirmar: true },   // CONFIRMAR: fonte não-independente
+    { year: "2026", event: "Golden Disc Awards", award: "Rookie Artist of the Year" },
+    { year: "2026", event: "D Awards", award: "Dreams Silver Label", confirmar: true },                            // CONFIRMAR: fonte não-independente
+    { year: "2026", event: "Hanteo Music Awards", award: "Rookie of the Year" },
+    { year: "2026", event: "iHeartRadio Music Awards", award: "Best New Artist — K-pop" }
+  ]
+};
 
 /* ── MVs & músicas ── */
 /* MVs do canal oficial (id = trecho após watch?v= na URL do YouTube).
@@ -308,6 +341,7 @@ const SECTIONS = [
   { title: "Trajetória", anchor: "#timeline" },
   { title: "Sobre a CORTIS", anchor: "#historia" },
   { title: "Curiosidades", anchor: "#curiosidades" },
+  { title: "Prêmios", anchor: "#premios" },
   { title: "MVs", anchor: "#mvs" },
   { title: "Galeria", anchor: "#galeria" },
   { title: "Os Gêmeos", anchor: "#gemeos" },
@@ -531,6 +565,45 @@ document.addEventListener('DOMContentLoaded', function () {
     c.innerHTML = curiosidades.map((f, i) =>
       `<div class="fact-card reveal" style="transition-delay:${i * 0.05}s"><div class="fact-tag">${esc(f.tag)}</div><div class="fact-text">${f.text}</div></div>`
     ).join('');
+  }
+
+  /* ── Render: Prêmios (2 tabelas — programas musicais + cerimônias) ── */
+  function renderPremios() {
+    const c = document.getElementById('premiosContainer'); if (!c) return;
+    const cell = "padding:.55rem .7rem;border-bottom:1px solid var(--border);font-size:.82rem;color:var(--text)";
+    const th = "padding:.55rem .7rem;text-align:left;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--border-hover)";
+    const foot = "font-size:.72rem;color:var(--text-2);font-style:italic;margin-top:.7rem;line-height:1.6";
+    const sub = "font-family:'Anton',sans-serif;font-size:1.3rem;letter-spacing:.03em;color:var(--text);text-align:center;margin-bottom:1rem";
+    const wrap = inner => `<div style="overflow-x:auto;border:1px solid var(--border);border-radius:14px;background:var(--card)"><table style="width:100%;border-collapse:collapse">${inner}</table></div>`;
+
+    const total = `<div style="text-align:center;margin-bottom:2.2rem">
+        <div style="font-family:'Anton',sans-serif;font-size:clamp(2.4rem,9vw,4rem);line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">${premios.total} troféus</div>
+        <div style="font-size:.82rem;color:var(--text-2);margin-top:.4rem">11 vitórias em programas musicais + 11 prêmios em cerimônias</div>
+        <div style="font-size:.72rem;color:var(--text-2);opacity:.8;margin-top:.3rem">Não inclui indicações, posições em paradas, vendas ou certificados.</div>
+      </div>`;
+
+    const rowsA = premios.musicShows.map(w =>
+      `<tr><td style="${cell};font-family:'Anton',sans-serif;color:var(--accent);width:52px">${esc(w.n)}</td><td style="${cell}">${esc(w.date)}</td><td style="${cell}">${esc(w.program)}</td></tr>`).join('');
+    const blocoA = `<div class="reveal" style="margin-bottom:2.6rem">
+        <div style="${sub}">“REDRED” — 11 vitórias em programas musicais</div>
+        ${wrap(`<thead><tr><th style="${th}">#</th><th style="${th}">Data</th><th style="${th}">Programa</th></tr></thead><tbody>${rowsA}</tbody>`)}
+        <div style="background:var(--glass);border:1px solid var(--border-hover);border-radius:14px;padding:1rem 1.2rem;margin-top:1.2rem;display:flex;flex-direction:column;gap:.5rem;font-size:.86rem;color:var(--text);line-height:1.55">
+          <div>🏆 <strong>Grand slam:</strong> venceu nos 5 principais programas — Show Champion, M Countdown, Music Bank, Show! Music Core e Inkigayo.</div>
+          <div>👑 <strong>Triple crown</strong> no Show! Music Core (3 vitórias) e também no Inkigayo (3 vitórias).</div>
+        </div>
+        <div style="${foot}">* Algumas listas contam “10 vitórias em maio” porque a 1ª foi em 30 de abril; o total final da música é 11.</div>
+      </div>`;
+
+    const rowsB = premios.cerimonias.map(a =>
+      `<tr><td style="${cell};color:var(--accent);width:56px">${esc(a.year)}</td><td style="${cell}">${esc(a.event)}${a.confirmar ? ' <span style="color:var(--text-2)" title="fonte ainda não confirmada de forma independente">*</span>' : ''}</td><td style="${cell}">${esc(a.award)}</td></tr>`).join('');
+    const blocoB = `<div class="reveal">
+        <div style="${sub}">11 prêmios em cerimônias</div>
+        ${wrap(`<thead><tr><th style="${th}">Ano</th><th style="${th}">Premiação</th><th style="${th}">Prêmio</th></tr></thead><tbody>${rowsB}</tbody>`)}
+        <div style="${foot}">* Fonte ainda não confirmada de forma independente: Korea First Brand Awards (Coreia/Vietnã/Indonésia) e D Awards. O Korea First Brand é uma premiação com 3 versões regionais, contadas aqui como 3 troféus.</div>
+        <div style="${foot}">A indicação de “GO!” a Favorite TikTok Dance no iHeartRadio não entra na contagem (não venceu).</div>
+      </div>`;
+
+    c.innerHTML = total + blocoA + blocoB;
   }
 
   /* ── Render: MVs (destaque + carrossel) ── */
@@ -885,6 +958,7 @@ document.addEventListener('DOMContentLoaded', function () {
   renderTimeline();
   renderHistoria();
   renderFacts();
+  renderPremios();
   renderMVs();
   renderGallery();
   renderGemeos();

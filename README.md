@@ -60,6 +60,10 @@ Grupo em ascensão — poucos lançamentos, cada um detalhado a fundo (cada card
 **Outros 2026**
 - *Mention Me* (13/02/2026) — OST do filme **GOAT**
 
+## Prêmios
+
+**22 troféus** (contagem até 16/07/2026): **11 vitórias** de *REDRED* em programas musicais (com *grand slam* nos 5 principais e *triple crown* no Music Core e no Inkigayo) + **11 prêmios** em cerimônias anuais/institucionais. A lista completa (duas tabelas) fica na seção **Prêmios** do site. Não inclui indicações, paradas, vendas ou certificados.
+
 ---
 
 ## TODOs pendentes
@@ -92,5 +96,5 @@ O que ainda **falta preencher** hoje em [script.js](script.js) (só o que está 
 
 Além dos `// TODO: confirmar`, o `script.js` usa dois marcadores especiais:
 
-- **`// CONFIRMAR`** — o valor **está preenchido**, mas precisa ser validado antes de tratar como 100% verificado. Hoje marca: os dados do fandom **COER** (fonte de fã — significado + membership global de 05/03/2026) e a participação do **James** em *"Cherish (My Love)"* (ILLIT), relatada mas sem crédito público claro.
+- **`// CONFIRMAR`** — o valor **está preenchido**, mas precisa ser validado antes de tratar como 100% verificado. Hoje marca: os dados do fandom **COER** (fonte de fã — significado + membership global de 05/03/2026); a participação do **James** em *"Cherish (My Love)"* (ILLIT), relatada mas sem crédito público claro; e **4 prêmios de fonte não-independente** — Korea First Brand Awards (Coreia, Vietnã e Indonésia) e D Awards (Dreams Silver Label).
 - **`// NOTA:`** — anotações internas para revisar antes de publicar. Hoje marcam: (1) a lesão nas mãos do **Keonho** (julho/2026) — informação de saúde sensível e volátil, mantida discreta e remetendo aos canais oficiais; (2) a divergência de datas do OST **Mention Me** (álbum em 06/02 vs. faixa em 13/02/2026 — usada a data da faixa).
