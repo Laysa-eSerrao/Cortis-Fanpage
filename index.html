@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CORTIS — Fanpage | COLOR OUTSIDE THE LINES</title>
+  <meta name="description" content="Fanpage do CORTIS (BigHit Music / HYBE): membros, discografia detalhada, trajetória, curiosidades, como diferenciar os gêmeos Seonghyeon e Keonho, a Cortis Ball e um guia para novos COER." />
+  <meta name="keywords" content="CORTIS, K-pop, BigHit Music, HYBE, COER, Martin, James, Juhoon, Seonghyeon, Keonho, COLOR OUTSIDE THE LINES, GREENGREEN" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CORTIS — COLOR OUTSIDE THE LINES" />
+  <meta property="og:description" content="Tudo sobre o CORTIS: membros, discografia, trajetória, curiosidades, Cortis Ball e guia para novos COER." />
+  <!-- TODO: confirmar e adicionar og:image (URL absoluta) e og:url quando publicar no GitHub Pages -->
+
+  <!-- Favicon (SVG inline — placeholder na cor do tema padrão) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231fc16b'/><text y='.92em' x='16' font-size='78' font-family='Arial Black' font-weight='900' fill='%23041a12'>C</text></svg>" />
+
+  <!-- Fontes: Anton (display marcante) + Inter (sans legível) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- Skip link (acessibilidade) -->
+<a class="skip-link" href="#membros">Pular para o conteúdo</a>
+
+<!-- ══════════ INTRO ══════════ -->
+<div id="introScreen">
+  <button id="introSkipBtn" class="intro-skip" aria-label="Pular introdução">Pular ›</button>
+  <div class="intro-logo">CORTIS</div>
+  <div class="intro-sub">COLOR OUTSIDE THE LINES · BigHit Music · Est. 2025</div>
+  <div class="intro-bar"><div class="intro-fill"></div></div>
+  <button class="intro-enter-btn" id="introEnterBtn">Entrar</button>
+</div>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<nav id="navbar" aria-label="Navegação principal">
+  <a class="nav-logo" href="#hero">CORTIS</a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#membros">Membros</a></li>
+    <li><a href="#discografia">Discografia</a></li>
+    <li><a href="#timeline">Trajetória</a></li>
+    <li><a href="#historia">Sobre</a></li>
+    <li><a href="#curiosidades">Curiosidades</a></li>
+    <li><a href="#mvs">MVs</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#gemeos">Os Gêmeos</a></li>
+    <li><a href="#cortisball">Cortis Ball</a></li>
+    <li><a href="#novos-coer">Novos COER</a></li>
+  </ul>
+
+  <div class="nav-controls">
+    <div id="themeControls" class="theme-controls" role="group" aria-label="Selecionar tema de cor">
+      <button class="theme-swatch" data-theme="verde-escuro" title="Verde escuro" aria-label="Tema Verde escuro"></button>
+      <button class="theme-swatch" data-theme="verde-claro"  title="Verde claro"  aria-label="Tema Verde claro"></button>
+      <button class="theme-swatch" data-theme="redred"       title="REDRED"       aria-label="Tema REDRED"></button>
+      <button class="theme-swatch" data-theme="acai"         title="ACAI"         aria-label="Tema ACAI"></button>
+      <button class="theme-swatch" data-theme="tnt"          title="TNT"          aria-label="Tema TNT"></button>
+    </div>
+    <button class="nav-search-btn" id="searchOpenBtn" title="Buscar" aria-label="Abrir busca">🔍</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<header id="hero">
+  <div class="hero-bg"></div>
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-content">
+    <p class="hero-eyebrow">BigHit Music · HYBE · Est. 2025</p>
+    <h1 class="hero-title">CORTIS</h1>
+    <p class="hero-tagline">COLOR OUTSIDE THE LINES</p>
+    <div class="hero-members">
+      <span>Martin</span><span>·</span>
+      <span>James</span><span>·</span>
+      <span>Juhoon</span><span>·</span>
+      <span>Seonghyeon</span><span>·</span>
+      <span>Keonho</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#membros" class="btn btn-primary">Conhecer os membros →</a>
+      <a href="#discografia" class="btn btn-outline">Ver discografia</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><span>Scroll</span><div class="scroll-line"></div></div>
+</header>
+
+<!-- ══════════ STATS ══════════ -->
+<div class="stats-bar" id="statsBar"><!-- preenchido pelo script.js --></div>
+
+<main>
+
+<!-- ══════════ MEMBROS ══════════ -->
+<section id="membros" class="section">
+  <div class="section-header">
+    <span class="section-label">OT5</span>
+    <h2 class="section-title">Os 5 do CORTIS</h2>
+    <p class="section-desc">Clique em qualquer membro para ver o perfil completo</p>
+  </div>
+  <div class="members-grid" id="membersGrid"><!-- preenchido pelo script.js --></div>
+</section>
+
+<!-- ══════════ DISCOGRAFIA ══════════ -->
+<section id="discografia" class="section-alt">
+  <div class="section-header">
+    <span class="section-label">Música</span>
+    <h2 class="section-title">Discografia</h2>
+    <p class="section-desc">Um grupo em ascensão — poucos lançamentos, cada um detalhado a fundo. Clique para ver as faixas.</p>
+  </div>
+  <div class="disco-grid" id="discoGrid"><!-- preenchido pelo script.js --></div>
+</section>
+
+<!-- ══════════ TRAJETÓRIA / TIMELINE ══════════ -->
+<section id="timeline" class="section">
+  <div class="section-header">
+    <span class="section-label">Trajetória</span>
+    <h2 class="section-title">Da carreira individual à formação</h2>
+    <p class="section-desc">O caminho de cada membro até se tornarem CORTIS</p>
+  </div>
+  <div class="timeline-container" id="timelineContainer"><!-- preenchido pelo script.js --></div>
+</section>
+
+<!-- ══════════ SOBRE / HISTÓRIA DO GRUPO ══════════ -->
+<section id="historia" class="section-alt">
+  <div class="section-header">
+    <span class="section-label">Sobre a CORTIS</span>
+    <h2 class="section-title">O grupo</h2>
+    <p class="section-desc">O significado do nome, a referência ao cortisol e o conceito de "creator crew"</p>
+  </div>
+  <div class="historia-container" id="historiaContainer"><!-- preenchido pelo script.js --></div>
+</section>
+
+<!-- ══════════ CURIOSIDADES ══════════ -->
+<section id="curiosidades" class="section">
+  <div class="section-header">
+    <span class="section-label">Você Sabia?</span>
+    <h2 class="section-title">Curiosidades</h2>
+  </div>
+  <div class="facts-grid" id="factsGrid"><!-- preenchido pelo script.js --></div>
+</section>
+
+<!-- ══════════ MVs ══════════ -->
+<section id="mvs" class="section-alt">
+  <div class="section-header">
+    <span class="section-label">Videoclipes</span>
+    <h2 class="section-title">MVs & Músicas</h2>
+  </div>
+  <div id="mvsFeatured"><!-- MV em destaque, preenchido pelo script.js --></div>
+  <div class="mvs-wrap">
+    <button class="mvs-btn-left" id="mvsPrev" type="button" aria-label="Ver MVs anteriores">‹</button>
+    <div id="mvsCarousel" class="mvs-scroll"><!-- preenchido pelo script.js --></div>
+    <button class="mvs-btn-right" id="mvsNext" type="button" aria-label="Ver próximos MVs">›</button>
+  </div>
+</section>
+
+<!-- ══════════ GALERIA ══════════ -->
+<section id="galeria" class="section">
+  <div class="section-header">
+    <span class="section-label">Fotos</span>
+    <h2 class="section-title">Galeria</h2>
+    <p class="section-desc">Clique em qualquer imagem para ampliar</p>
+  </div>
+  <div class="gallery-masonry" id="galleryGrid"><!-- preenchido pelo script.js --></div>
+</section>
+
+<!-- ══════════ OS GÊMEOS (Seonghyeon vs Keonho) ══════════ -->
+<section id="gemeos" class="section-alt">
+  <div class="section-header">
+    <span class="section-label">Guia COER</span>
+    <h2 class="section-title">Diferencie os "Gêmeos"</h2>
+    <p class="section-desc">Seonghyeon vs Keonho — comparação lado a lado para nunca mais confundir</p>
+  </div>
+  <div class="gemeos-container" id="gemeosContainer"><!-- preenchido pelo script.js --></div>
+</section>
+
+<!-- ══════════ CORTIS BALL ══════════ -->
+<section id="cortisball" class="section">
+  <div class="section-header">
+    <span class="section-label">Merch Oficial</span>
+    <h2 class="section-title">Cortis Ball</h2>
+    <p class="section-desc">As pelúcias/bolinhas que representam o grupo</p>
+  </div>
+  <div class="cortisball-container" id="cortisballContainer"><!-- preenchido pelo script.js --></div>
+</section>
+
+<!-- ══════════ STREAM ══════════ -->
+<section id="stream" class="section-alt">
+  <div class="section-header">
+    <span class="section-label">Ouça & Apoie</span>
+    <h2 class="section-title">Stream</h2>
+  </div>
+  <div class="stream-grid" id="streamGrid"><!-- preenchido pelo script.js --></div>
+</section>
+
+<!-- ══════════ GUIA PARA NOVOS COER ══════════ -->
+<section id="novos-coer" class="section">
+  <div class="section-header">
+    <span class="section-label">Bem-vindo ao fandom</span>
+    <h2 class="section-title">Para Novos COER</h2>
+    <p class="section-desc">Começando do zero? Aqui está tudo que você precisa saber</p>
+  </div>
+  <div class="new-coer-grid" id="novosCoerGrid"><!-- preenchido pelo script.js --></div>
+</section>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer id="footer">
+  <div class="footer-logo">CORTIS</div>
+  <p class="footer-tagline">COLOR OUTSIDE THE LINES</p>
+  <nav class="footer-links" aria-label="Links oficiais">
+    <!-- TODO: confirmar e substituir os href="#" pelas URLs oficiais -->
+    <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="#" target="_blank" rel="noopener noreferrer">Spotify</a>
+    <a href="#" target="_blank" rel="noopener noreferrer">Apple Music</a>
+    <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="#" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+    <a href="#" target="_blank" rel="noopener noreferrer">TikTok</a>
+    <a href="#" target="_blank" rel="noopener noreferrer">Weverse</a>
+    <a href="#" target="_blank" rel="noopener noreferrer">BigHit Music</a>
+  </nav>
+  <p class="footer-copy">Fanpage feita por fã · Sem afiliação com a BigHit Music / HYBE · 2026</p>
+</footer>
+
+<!-- ══════════ ELEMENTOS AUXILIARES ══════════ -->
+
+<!-- Modal de membro -->
+<div id="memberModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-label="Perfil do membro">
+  <div class="member-modal">
+    <button class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar perfil do membro">✕</button>
+    <div class="modal-img-side" id="modalImgSide"></div>
+    <div class="modal-info-side" id="modalInfoSide"></div>
+  </div>
+</div>
+
+<!-- Modal de álbum (discografia detalhada) -->
+<div id="albumModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-label="Detalhes do álbum">
+  <div class="album-modal">
+    <button class="modal-close-btn" id="albumModalCloseBtn" aria-label="Fechar detalhes do álbum">✕</button>
+    <div class="album-modal-body" id="albumModalBody"></div>
+  </div>
+</div>
+
+<!-- Lightbox da galeria -->
+<div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
+  <button id="lbClose" class="lb-btn lb-close" aria-label="Fechar imagem">✕</button>
+  <img id="lbImg" src="" alt="" />
+</div>
+
+<!-- Busca global -->
+<div class="search-wrap" id="searchWrap" role="dialog" aria-modal="true" aria-label="Busca">
+  <div class="search-input-wrap">
+    <span class="search-input-icon" aria-hidden="true">🔍</span>
+    <input class="search-input" id="searchInput" type="text" placeholder="Buscar membros, álbuns, curiosidades..." autocomplete="off" aria-label="Campo de busca" />
+    <button class="search-close" id="searchCloseBtn" aria-label="Fechar busca">✕</button>
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<!-- Drawer mobile -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="drawer" aria-label="Menu de navegação">
+  <div class="drawer-header">
+    <span class="drawer-logo">CORTIS</span>
+    <button class="drawer-close" id="drawerClose" aria-label="Fechar menu">✕</button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="#membros">Membros</a>
+    <a href="#discografia">Discografia</a>
+    <a href="#timeline">Trajetória</a>
+    <a href="#historia">Sobre</a>
+    <a href="#curiosidades">Curiosidades</a>
+    <a href="#mvs">MVs</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#gemeos">Os Gêmeos</a>
+    <a href="#cortisball">Cortis Ball</a>
+    <a href="#stream">Stream</a>
+    <a href="#novos-coer">Novos COER</a>
+  </nav>
+  <div class="drawer-footer">COLOR OUTSIDE THE LINES</div>
+</aside>
+
+<!-- Voltar ao topo -->
+<button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+</body>
+</html>
