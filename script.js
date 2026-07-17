@@ -22,17 +22,16 @@ const mvFallbackThumb = t =>
 const membros = [
   {
     name: "Martin", kr: "마틴 조너선 에드워즈", full: "Martin Jonathan Edwards",
-    role: "Líder · Vocalista · Rapper · Produtor · Compositor",
+    role: "Líder",
     nat: "Coreano-canadense",
-    rank: "Líder",
     birthday: "20 de março de 2008",
     height: "190,5 cm",
-    img: "", ballImg: "", // TODO: adicionar URLs (foto + Cortis Ball)
-    tags: ["Líder", "Vocalista · Rapper", "Produtor / Compositor"],
-    bio: "Líder do CORTIS e um dos cérebros criativos do grupo — vocalista, rapper, produtor e compositor. É coreano-canadense. Antes mesmo da estreia, já aparecia como <strong>um dos colaboradores creditados</strong> na criação de músicas de outros artistas da HYBE, como “Magnetic” (ILLIT); “Deja Vu”, “Miracle” e “Beautiful Strangers” (TXT); “Pierrot” (LE SSERAFIM); e “Outside” (ENHYPEN).",
+    img: "assets/martin.jpg",
+    tags: ["Líder"],
+    bio: "Líder do CORTIS e um dos cérebros criativos do grupo. É coreano-canadense. Antes mesmo da estreia, já aparecia como <strong>um dos colaboradores creditados</strong> na criação de músicas de outros artistas da HYBE, como “Magnetic” (ILLIT); “Deja Vu”, “Miracle” e “Beautiful Strangers” (TXT); “Pierrot” (LE SSERAFIM); e “Outside” (ENHYPEN).",
     facts: [
+      "Líder do CORTIS.",
       "Nome coreano: <strong>Park Woo-joo</strong> (박우주).",
-      "Líder do CORTIS; vocalista, rapper, produtor e compositor.",
       "Créditos pré-debut (colaborador creditado): “Magnetic” (ILLIT); “Deja Vu”, “Miracle” e “Beautiful Strangers” (TXT); “Pierrot” (LE SSERAFIM); “Outside” (ENHYPEN).",
       "Participou do coro infantil nas Olimpíadas de Inverno de PyeongChang 2018.",
       "Coreano-canadense."
@@ -40,31 +39,29 @@ const membros = [
   },
   {
     name: "James", kr: "", full: "Zhao Yufan (趙雨凡)",
-    role: "Dançarino · Vocalista · Rapper · Coreógrafo",
+    role: "",
     nat: "Tailandês-taiwanês",
-    rank: "Membro mais velho",
     birthday: "14 de outubro de 2005",
-    img: "", ballImg: "",
-    tags: ["Coreógrafo", "Dança · Vocal · Rap", "Ex-Trainee A"],
-    bio: "Membro <strong>mais velho</strong> do grupo — dançarino, vocalista, rapper e coreógrafo. Nasceu em Hong Kong (mãe tailandesa, pai chinês) e cresceu em Taipei. Fala 5 línguas: inglês, mandarim, tailandês, coreano e japonês. Foi integrante do grupo pré-debut <em>Trainee A</em> (HYBE, 2021–2022).",
+    img: "assets/james.jpg",
+    tags: ["O mais velho"],
+    bio: "O <strong>mais velho</strong> do grupo — e o único adulto na estreia. Nasceu em Hong Kong (mãe tailandesa, pai chinês) e cresceu em Taipei. Fala 5 línguas: inglês, mandarim, tailandês, coreano e japonês. Foi integrante do grupo pré-debut <em>Trainee A</em> (HYBE, 2021–2022).",
     facts: [
-      "Membro mais velho — e o único adulto na estreia.",
+      "O mais velho — e o único adulto na estreia.",
       "Fala 5 línguas: inglês, mandarim, tailandês, coreano e japonês.",
       "Ex-integrante do Trainee A (HYBE, 2021–2022).",
-      "Coreografia/composição em “Magnetic” e “Deja Vu”; ajudou na coreografia de “GO!”."
+      "Contribuiu na coreografia/composição de “Magnetic” e “Deja Vu” e ajudou na coreografia de “GO!”."
     ]
   },
   {
     name: "Juhoon", kr: "", full: "Kim Ju-hoon (김주훈)",
-    role: "Dançarino",
+    role: "",
     nat: "Coreano",
-    rank: "",
     birthday: "3 de janeiro de 2008",
-    img: "", ballImg: "",
-    tags: ["Dançarino", "Cor: azul"],
-    bio: "Dançarino do CORTIS. Ex-modelo infantil, apareceu em campanhas e clipes de Vixx, Zion.T e Melo Mance. Entrou na BigHit Music em 2023. Sua cor representativa é o azul.",
+    img: "assets/juhoon.jpg",
+    tags: ["Cor: azul"],
+    bio: "Coreano. Ex-modelo infantil, apareceu em campanhas e clipes de Vixx, Zion.T e Melo Mance. Entrou na BigHit Music em 2023. Sua cor representativa é o azul.",
     facts: [
-      "Dançarino do grupo; cor representativa azul.",
+      "Cor representativa: azul.",
       "Ex-modelo infantil (campanhas e clipes de Vixx, Zion.T e Melo Mance).",
       "Entrou na BigHit Music em 2023.",
       "Na estreia, disse buscar uma “pequena faísca especial” dentro das coisas comuns (Weverse Magazine)."
@@ -72,33 +69,30 @@ const membros = [
   },
   {
     name: "Seonghyeon", kr: "", full: "Eom Sung-hyun (엄성현)",
-    role: "Main topliner · Vocalista",
+    role: "",
     nat: "Coreano (Seo-gu, Daejeon)",
-    rank: "Maknae",
     birthday: "13 de janeiro de 2009",
-    img: "", ballImg: "",
-    tags: ["Maknae", "Main topliner"],
-    bio: "Um dos <strong>maknaes</strong> do grupo e seu <strong>main topliner</strong> (escreve as melodias), além de vocalista. Nascido em Seo-gu, Daejeon. Discreto (soft-spoken), trabalhou em cerca de 100 faixas como trainee e ajudou nas 5 músicas do 1º EP; também participou da coreografia de “GO!”. É frequentemente confundido com Keonho (veja a seção “Os Gêmeos”).",
+    img: "assets/seonghyeon.jpg",
+    tags: [],
+    bio: "Um dos integrantes mais novos, nascido em Seo-gu, Daejeon. Discreto (soft-spoken), trabalhou em cerca de 100 faixas como trainee e ajudou a compor as 5 músicas do 1º EP; também participou da coreografia de “GO!”. É frequentemente confundido com Keonho (veja “Diferencie os Gêmeos”).",
     facts: [
-      "Main topliner do grupo — escreve as melodias.",
-      "Trabalhou em ~100 faixas como trainee; ajudou nas 5 músicas do 1º EP.",
-      "Participou da coreografia de “GO!”.",
+      "Trabalhou em ~100 faixas como trainee e ajudou a compor as 5 músicas do 1º EP.",
+      "Ajudou na coreografia de “GO!”.",
+      "Discreto (soft-spoken).",
       "Frequentemente confundido com Keonho."
     ]
   },
   {
     name: "Keonho", kr: "", full: "Ahn Geon-ho (안건호)",
-    role: "Maknae · Produção de vídeo",
+    role: "",
     nat: "Coreano (Suwon, Gyeonggi)",
-    rank: "Maknae (o mais novo)",
     birthday: "14 de fevereiro de 2009",
     height: "178 cm",
-    img: "", ballImg: "",
-    tags: ["Maknae", "Produção de vídeo", "Ex-nadador"],
-    bio: "O <strong>membro mais novo</strong> (maknae) do CORTIS, também envolvido na <strong>produção de vídeo</strong>. Nascido em Suwon (Gyeonggi). Foi <strong>nadador competitivo</strong> antes da carreira artística.",
+    img: "assets/keonho.jpg",
+    tags: ["O mais novo", "Ex-nadador"],
+    bio: "O integrante <strong>mais novo</strong> do CORTIS, nascido em Suwon (Gyeonggi). Foi <strong>nadador competitivo</strong> antes da carreira artística.",
     facts: [
-      "O membro mais novo (maknae).",
-      "Envolvido na produção de vídeo do grupo.",
+      "O integrante mais novo do grupo.",
       "Ex-nadador competitivo antes da carreira artística.",
       "Em julho de 2026, a BigHit informou uma lesão nas mãos (fraturas próximas aos dedos mínimos); participações em shows podem variar. Atualizações oficiais nos canais do grupo." // NOTA: informação de saúde, volátil — revisar antes de publicar
     ]
@@ -108,39 +102,24 @@ const membros = [
 /* ── Discografia (grupo em ascensão — poucos lançamentos, bem detalhados) ── */
 const discografia = [
   {
+    name: "COLOR OUTSIDE THE LINES", year: "2025", date: "08/09/2025", type: "ep", badge: "1º EP · Debut",
+    titleTrack: "What You Want", trackCount: 6,
+    tracks: ["GO!", "What You Want", "FaSHioN", "JoyRide", "Lullaby", "What You Want (feat. Teezo Touchdown)"],
+    img: "assets/capa-color-outside-the-lines.jpg",
+    desc: "EP de estreia do CORTIS, que estreou em <strong>#15 na Billboard 200</strong> e foi certificado em <strong>2 milhões de cópias</strong> (março de 2026). Contexto das faixas: <strong>GO!</strong> apresenta o grupo (trap + sintetizadores); <strong>What You Want</strong> (faixa-título de estreia) mistura boom bap e rock psicodélico dos anos 60; <strong>FaSHioN</strong> trata da moda como identidade (estética Y2K/punk); <strong>JoyRide</strong> celebra a liberdade do verão; <strong>Lullaby</strong> mostra o lado mais sensível. Fecha com a versão de <strong>What You Want</strong> com participação de Teezo Touchdown."
+  },
+  {
     name: "GREENGREEN", year: "2026", date: "04/05/2026", type: "ep", badge: "2º EP",
     titleTrack: "REDRED", trackCount: 6,
     tracks: ["TNT", "REDRED", "ACAI", "YOUNGCREATORCREW", "Wassup", "Blue Lips"],
-    img: "",
+    img: "assets/capa-greengreen.jpg",
     desc: "Segundo EP do CORTIS, com a faixa-título <strong>REDRED</strong> (pré-lançada em 20/04/2026). O conceito, idealizado pelo <strong>James</strong>, usa verde e vermelho para mostrar o que o grupo abraça vs. o que rejeita. Passeia por vários gêneros de propósito: <strong>TNT</strong> tem batida trap, <strong>REDRED</strong> traz electroclash dos anos 2000 e <strong>ACAI</strong> celebra o “superalimento” favorito do grupo. Vendeu <strong>+1,1 milhão de cópias no 1º dia</strong> e estreou em <strong>#3 na Billboard 200</strong>."
   },
   {
-    name: "Mention Me", year: "2026", date: "13/02/2026", type: "ost", badge: "OST · filme GOAT",
-    titleTrack: "Mention Me", trackCount: 1, tracks: ["Mention Me"], img: "",
+    name: "Mention Me", year: "2026", date: "13/02/2026", type: "ost", badge: "Single (OST) · GOAT",
+    titleTrack: "Mention Me", trackCount: 1, tracks: ["Mention Me"], img: "assets/capa-mention-me.jpg",
     // NOTA: fontes divergem — álbum da trilha listado em 06/02/2026 (Wikipedia) e a faixa em 13/02/2026 (Apple/Shazam). Usada a data da faixa.
-    desc: "OST oficial <strong>“Mention Me (From The Movie ‘GOAT’)”</strong> — faixa do CORTIS para a trilha de <strong>GOAT</strong> (2026), animação da Sony Pictures Animation sobre um bode chamado Will no mundo do “roarball”. É o <strong>primeiro OST de filme de Hollywood</strong> do grupo desde a estreia, ao lado de nomes como Jelly Roll e Ayra Starr (o astro da NBA Stephen Curry participa como produtor; mesma produtora de “K-pop Demon Hunters”). Estilo trap com forte linha de baixo; os membros participaram da escrita e composição, inspirados na história do protagonista."
-  },
-  {
-    name: "COLOR OUTSIDE THE LINES", year: "2025", date: "08/09/2025", type: "ep", badge: "1º EP · Debut",
-    titleTrack: "What You Want", trackCount: 5,
-    tracks: ["GO!", "What You Want", "FaSHioN", "JoyRide", "Lullaby"],
-    img: "",
-    desc: "EP de estreia do CORTIS, que estreou em <strong>#15 na Billboard 200</strong> e foi certificado em <strong>2 milhões de cópias</strong> (março de 2026). Contexto das faixas: <strong>GO!</strong> apresenta o grupo (trap + sintetizadores); <strong>What You Want</strong> (faixa-título de estreia) mistura boom bap e rock psicodélico dos anos 60, com versão com participação de Teezo Touchdown; <strong>FaSHioN</strong> trata da moda como identidade (estética Y2K/punk); <strong>JoyRide</strong> celebra a liberdade do verão; <strong>Lullaby</strong> mostra o lado mais sensível."
-  },
-  {
-    name: "FaSHioN", year: "2025", date: "08/09/2025", type: "single", badge: "Single · COTL",
-    titleTrack: "FaSHioN", trackCount: 1, tracks: ["FaSHioN"], img: "",
-    desc: "Single do EP COLOR OUTSIDE THE LINES, lançado em 08/09/2025. Trata da moda como identidade, com estética Y2K/punk."
-  },
-  {
-    name: "What You Want", year: "2025", date: "18/08/2025", type: "single", badge: "Single de estreia",
-    titleTrack: "What You Want", trackCount: 1, tracks: ["What You Want"], img: "",
-    desc: "Single de <strong>estreia oficial</strong> do CORTIS (18/08/2025) e faixa-título do EP COLOR OUTSIDE THE LINES. Mistura boom bap e rock psicodélico dos anos 60; há versão com participação de Teezo Touchdown."
-  },
-  {
-    name: "GO!", year: "2025", date: "11/08/2025", type: "single", badge: "Pré-single",
-    titleTrack: "GO!", trackCount: 1, tracks: ["GO!"], img: "",
-    desc: "<strong>Pré-single</strong> lançado em 11/08/2025, apresentando o grupo (trap + sintetizadores). Abre o EP COLOR OUTSIDE THE LINES."
+    desc: "Single da trilha (OST) do filme <strong>GOAT</strong> (2026), animação da <strong>Sony Pictures Animation</strong> sobre um bode chamado Will no mundo do “roarball”. É o primeiro OST de filme de Hollywood do grupo desde a estreia. Estilo trap com forte linha de baixo; os membros participaram da escrita e composição."
   }
 ];
 
@@ -162,14 +141,14 @@ const timeline = [
 
 /* ── Sobre / História do grupo ── */
 const historia = [
-  { icon: "🎨", title: "COLOR OUTSIDE THE LINES", text: "<strong>CORTIS</strong> é o acrônimo de <strong>COLOR OUTSIDE THE LINES</strong> (선 밖에 색칠하다) — as seis letras foram escolhidas aleatoriamente da frase. A ideia é <strong>pensar livremente e romper os padrões do mundo</strong>." },
-  { icon: "🛠️", title: "Young creator crew", text: "O CORTIS se define como uma <strong>“young creator crew”</strong>: todos os membros participam de composição, produção, coreografia, vídeos e direção visual. Os cinco receberam créditos no projeto de estreia e prepararam <strong>mais de 300 músicas</strong> em cerca de 2 anos." },
-  { icon: "🏢", title: "BigHit Music · HYBE", text: "É o <strong>3º grupo da BigHit Music</strong> depois de BTS e TXT — e o 1º boy group do selo em cerca de 6 anos. Nos EUA, é representado pela <strong>Republic Records</strong>." },
-  { icon: "📣", title: "Revelação", text: "Antes chamado informalmente de <strong>BIGHITNBG</strong> (BigHit New Boy Group), o grupo foi revelado em abril de 2025; os membros em <strong>14 de julho</strong> e o nome em <strong>7 de agosto de 2025</strong>." },
-  { icon: "🖌️", title: "Direção criativa", text: "A direção criativa e o estilo ficam com <strong>Seoyoung Kim</strong> e <strong>Actoy</strong>, com estética <strong>punk + Y2K</strong>." },
-  { icon: "👥", title: "OT5", text: "São cinco membros: <strong>Martin</strong> (líder), <strong>James</strong> (o mais velho), <strong>Juhoon</strong>, <strong>Seonghyeon</strong> e <strong>Keonho</strong> (o mais novo)." },
-  { icon: "💚", title: "Fandom: COER", text: "O fandom se chama <strong>COER (코어)</strong> — junção de <strong>“COR”</strong> (de CORTIS) + <strong>“~ER”</strong> (os que ficam juntos), ecoando <em>“CORE”</em> (núcleo): os fãs como força central. Escolhido entre mais de 19 mil sugestões; a membership global abriu em 05/03/2026 (200 dias de estreia)." }, // CONFIRMAR: fonte de fã, validar
-  { icon: "🎤", title: "1ª turnê", text: "Em 2026 o grupo anunciou a <strong>CORTIS TOUR — PUT YOUR PHONE DOWN</strong>, com etapas na Coreia, América do Norte e Japão (PIA Arena MM, Kanagawa, em 4–6 de setembro). O nome é um convite para viver o show no presente, sem telas." }
+  { title: "COLOR OUTSIDE THE LINES", text: "<strong>CORTIS</strong> é o acrônimo de <strong>COLOR OUTSIDE THE LINES</strong> (선 밖에 색칠하다) — as seis letras foram escolhidas aleatoriamente da frase. A ideia é <strong>pensar livremente e romper os padrões do mundo</strong>." },
+  { title: "Young creator crew", text: "O CORTIS se define como uma <strong>“young creator crew”</strong>: todos os membros participam de composição, produção, coreografia, vídeos e direção visual. Os cinco receberam créditos no projeto de estreia e prepararam <strong>mais de 300 músicas</strong> em cerca de 2 anos." },
+  { title: "BigHit Music · HYBE", text: "É o <strong>3º grupo da BigHit Music</strong> depois de BTS e TXT — e o 1º boy group do selo em cerca de 6 anos. Nos EUA, é representado pela <strong>Republic Records</strong>." },
+  { title: "Revelação", text: "Antes chamado informalmente de <strong>BIGHITNBG</strong> (BigHit New Boy Group), o grupo foi revelado em abril de 2025; os membros em <strong>14 de julho</strong> e o nome em <strong>7 de agosto de 2025</strong>." },
+  { title: "Direção criativa", text: "A direção criativa e o estilo ficam com <strong>Seoyoung Kim</strong> e <strong>Actoy</strong>, com estética <strong>punk + Y2K</strong>." },
+  { title: "OT5", text: "São cinco membros: <strong>Martin</strong> (líder), <strong>James</strong> (o mais velho), <strong>Juhoon</strong>, <strong>Seonghyeon</strong> e <strong>Keonho</strong> (o mais novo)." },
+  { title: "Fandom: COER", text: "O fandom se chama <strong>COER (코어)</strong> — junção de <strong>“COR”</strong> (de CORTIS) + <strong>“~ER”</strong> (os que ficam juntos), ecoando <em>“CORE”</em> (núcleo): os fãs como força central. Escolhido entre mais de 19 mil sugestões; a membership global abriu em 05/03/2026 (200 dias de estreia)." }, // CONFIRMAR: fonte de fã, validar
+  { title: "1ª turnê", text: "Em 2026 o grupo anunciou a <strong>CORTIS TOUR — PUT YOUR PHONE DOWN</strong>, com etapas na Coreia, América do Norte e Japão (PIA Arena MM, Kanagawa, em 4–6 de setembro). O nome é um convite para viver o show no presente, sem telas." }
 ];
 
 /* ── Curiosidades ── */
@@ -241,14 +220,13 @@ const mvs = [
 ];
 
 /* ── Galeria ── */
-/* TODO: adicionar as URLs das imagens */
 const galeria = [
-  { alt: "Martin", url: "" },
-  { alt: "James", url: "" },
-  { alt: "Juhoon", url: "" },
-  { alt: "Seonghyeon", url: "" },
-  { alt: "Keonho", url: "" },
-  { alt: "CORTIS — grupo", url: "" }
+  { alt: "Martin", url: "assets/galeria-01.jpg" },
+  { alt: "Juhoon", url: "assets/galeria-02.jpg" },
+  { alt: "Keonho", url: "assets/galeria-03.jpg" },
+  { alt: "James", url: "assets/galeria-04.jpg" },
+  { alt: "Seonghyeon", url: "assets/galeria-05.jpg" },
+  { alt: "CORTIS", url: "assets/galeria-06.jpg" }
 ];
 
 /* ── Os Gêmeos (Seonghyeon vs Keonho) ── */
@@ -256,7 +234,7 @@ const gemeos = {
   intro: "No começo é fácil confundir os dois, principalmente porque ambos nasceram em 2009 e costumam aparecer juntos. O jeito mais confiável de diferenciar é observar o formato do rosto, os olhos e o maxilar.",
   membros: [
     {
-      name: "Seonghyeon", sub: "Rosto fino · olhar suave", img: "",
+      name: "Seonghyeon", sub: "Rosto fino · olhar suave", img: "assets/gemeo-seonghyeon.jpg", pos: "Foto à esquerda",
       traits: [
         "Rosto mais comprido, estreito e delicado",
         "Queixo mais fino, formando um rosto próximo de um “V”",
@@ -267,7 +245,7 @@ const gemeos = {
       ]
     },
     {
-      name: "Keonho", sub: "Sobrancelha forte · olhar intenso", img: "",
+      name: "Keonho", sub: "Sobrancelha forte · olhar intenso", img: "assets/gemeo-keonho.jpg", pos: "Foto à direita",
       traits: [
         "Rosto mais largo e estruturado",
         "Maxilar e maçãs do rosto mais marcados",
@@ -281,19 +259,17 @@ const gemeos = {
   truque: [
     "<strong>Seonghyeon</strong> = rosto fino, olhar suave e queixo delicado",
     "<strong>Keonho</strong> = sobrancelha forte, olhar intenso e maxilar marcado"
-  ],
-  nota: "Evite decorar apenas pelo cabelo — ele muda muito entre eras. O formato do rosto e das sobrancelhas é a pista mais confiável."
+  ]
 };
 
 /* ── Cortis Ball (merch) ── */
 const cortisBall = {
-  intro: "A <strong>Cortis Ball</strong> é o merch oficial do CORTIS: pelúcias/bolinhas que representam o grupo. // TODO: confirmar os detalhes de cada bolinha (nome, cor e se há uma por membro).",
+  intro: "A <strong>Cortis Ball</strong> é o mascote/merch do CORTIS. Além da versão <strong>padrão</strong> (do grupo), há três versões que representam músicas: <strong>ACAI</strong>, <strong>REDRED</strong> e <strong>TNT</strong>.",
   items: [
-    { member: "Martin", img: "" },
-    { member: "James", img: "" },
-    { member: "Juhoon", img: "" },
-    { member: "Seonghyeon", img: "" },
-    { member: "Keonho", img: "" }
+    { name: "Padrão", rep: "Bola oficial do grupo", img: "assets/cortisball-padrao.jpg" },
+    { name: "ACAI", rep: "Versão da música ACAI", img: "assets/cortisball-acai.jpg" },
+    { name: "REDRED", rep: "Versão da música REDRED", img: "assets/cortisball-redred.jpg" },
+    { name: "TNT", rep: "Versão da música TNT", img: "assets/cortisball-tnt.jpg" }
   ]
 };
 
@@ -434,7 +410,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function openMemberDetail(i) {
     const m = membros[i]; if (!m || !memberModal) return;
     imgSide.innerHTML = m.img
-      ? `<img src="${esc(m.img)}" alt="${esc(m.name)}" onerror="this.style.display='none'">`
+      ? `<img src="${esc(m.img)}" alt="${esc(m.name)}" loading="lazy" onerror="this.style.display='none'">`
       : fallbackBox(m.name.charAt(0), true);
     infoSide.innerHTML =
       `<div class="modal-stage">${esc(m.name)}</div>
@@ -444,9 +420,8 @@ document.addEventListener('DOMContentLoaded', function () {
        <div class="modal-stats">
          <div><div class="modal-stat-label">Nascimento</div><div class="modal-stat-value">${esc(m.birthday)}</div></div>
          <div><div class="modal-stat-label">Nacionalidade</div><div class="modal-stat-value">${esc(m.nat)}</div></div>
-         <div><div class="modal-stat-label">Posição</div><div class="modal-stat-value">${esc(m.role)}</div></div>
          ${m.height ? `<div><div class="modal-stat-label">Altura</div><div class="modal-stat-value">${esc(m.height)}</div></div>` : ''}
-         <div><div class="modal-stat-label">No grupo</div><div class="modal-stat-value">${esc(m.rank || '—')}</div></div>
+         <div><div class="modal-stat-label">No grupo</div><div class="modal-stat-value">${esc(m.role || 'Creator crew')}</div></div>
        </div>
        <div class="modal-divider"></div>
        <div class="modal-bio">${m.bio}</div>
@@ -459,7 +434,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function openAlbumDetail(i) {
     const a = discografia[i]; if (!a || !albumModal) return;
     const cover = a.img
-      ? `<img class="album-modal-cover" src="${esc(a.img)}" alt="${esc(a.name)}" onerror="this.style.display='none'">`
+      ? `<img class="album-modal-cover" src="${esc(a.img)}" alt="${esc(a.name)}" loading="lazy" onerror="this.style.display='none'">`
       : '';
     const tracks = (a.tracks && a.tracks.length)
       ? `<div class="album-track-list">${a.tracks.map((t, n) =>
@@ -510,16 +485,12 @@ document.addEventListener('DOMContentLoaded', function () {
       const media = m.img
         ? `<img src="${esc(m.img)}" alt="${esc(m.name)}" loading="lazy" onerror="this.style.display='none'">`
         : fallbackBox(m.name.charAt(0), true);
-      const ball = m.ballImg
-        ? `<div class="member-ball-badge"><img src="${esc(m.ballImg)}" alt="Cortis Ball de ${esc(m.name)}" onerror="this.parentElement.style.display='none'"></div>`
-        : '';
       card.innerHTML =
-        `<div class="member-img-wrap">${media}<div class="member-overlay"></div>${ball}
+        `<div class="member-img-wrap">${media}<div class="member-overlay"></div>
           <div class="member-bottom">
-            <span class="member-badge">${esc(m.tags[0] || 'CORTIS')}</span>
+            <span class="member-badge">${esc(m.role || 'Creator crew')}</span>
             <div class="member-stage">${esc(m.name)}</div>
             <div class="member-name">${esc(m.nat)}</div>
-            <div class="member-role">${esc(m.role)}</div>
           </div>
         </div>`;
       card.addEventListener('click', () => openMemberDetail(i));
@@ -572,7 +543,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function renderHistoria() {
     const c = document.getElementById('historiaContainer'); if (!c) return;
     c.innerHTML = historia.map(h =>
-      `<article class="historia-card reveal"><div class="historia-icon">${h.icon}</div><div class="historia-title">${esc(h.title)}</div><div class="historia-text">${h.text}</div></article>`
+      `<article class="historia-card reveal"><div class="historia-title">${esc(h.title)}</div><div class="historia-text">${h.text}</div></article>`
     ).join('');
   }
 
@@ -589,7 +560,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const c = document.getElementById('premiosContainer'); if (!c) return;
     const cell = "padding:.55rem .7rem;border-bottom:1px solid color-mix(in srgb, var(--stext) 16%, transparent);font-size:.82rem;color:var(--stext)";
     const th = "padding:.55rem .7rem;text-align:left;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--saccent);border-bottom:1px solid color-mix(in srgb, var(--stext) 30%, transparent)";
-    const foot = "font-size:.72rem;color:var(--stext2);font-style:italic;margin-top:.7rem;line-height:1.6";
     const sub = "font-family:'Anton',sans-serif;font-size:1.3rem;letter-spacing:.03em;color:var(--stext);text-align:center;margin-bottom:1rem";
     const wrap = inner => `<div style="overflow-x:auto;border:1px solid color-mix(in srgb, var(--stext) 16%, transparent);border-radius:14px;background:var(--card)"><table style="width:100%;border-collapse:collapse">${inner}</table></div>`;
 
@@ -608,16 +578,13 @@ document.addEventListener('DOMContentLoaded', function () {
           <div>🏆 <strong>Grand slam:</strong> venceu nos 5 principais programas — Show Champion, M Countdown, Music Bank, Show! Music Core e Inkigayo.</div>
           <div>👑 <strong>Triple crown</strong> no Show! Music Core (3 vitórias) e também no Inkigayo (3 vitórias).</div>
         </div>
-        <div style="${foot}">* Algumas listas contam “10 vitórias em maio” porque a 1ª foi em 30 de abril; o total final da música é 11.</div>
       </div>`;
 
     const rowsB = premios.cerimonias.map(a =>
-      `<tr><td style="${cell};color:var(--saccent);width:56px">${esc(a.year)}</td><td style="${cell}">${esc(a.event)}${a.confirmar ? ' <span style="color:var(--stext2)" title="fonte ainda não confirmada de forma independente">*</span>' : ''}</td><td style="${cell}">${esc(a.award)}</td></tr>`).join('');
+      `<tr><td style="${cell};color:var(--saccent);width:56px">${esc(a.year)}</td><td style="${cell}">${esc(a.event)}</td><td style="${cell}">${esc(a.award)}</td></tr>`).join('');
     const blocoB = `<div class="reveal">
         <div style="${sub}">11 prêmios em cerimônias</div>
         ${wrap(`<thead><tr><th style="${th}">Ano</th><th style="${th}">Premiação</th><th style="${th}">Prêmio</th></tr></thead><tbody>${rowsB}</tbody>`)}
-        <div style="${foot}">* Fonte ainda não confirmada de forma independente: Korea First Brand Awards (Coreia/Vietnã/Indonésia) e D Awards. O Korea First Brand é uma premiação com 3 versões regionais, contadas aqui como 3 troféus.</div>
-        <div style="${foot}">A indicação de “GO!” a Favorite TikTok Dance no iHeartRadio não entra na contagem (não venceu).</div>
       </div>`;
 
     c.innerHTML = total + blocoA + blocoB;
@@ -710,9 +677,10 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ── Render: Os Gêmeos ── */
   function renderGemeos() {
     const c = document.getElementById('gemeosContainer'); if (!c) return;
-    // TODO: legendas de posição (esquerda/direita) — preencher junto com as imagens reais
+    // Legendas de posição: Seonghyeon à esquerda, Keonho à direita (campo g.pos)
     const cardHTML = g =>
       `<article class="gemeo-card reveal">
+        ${g.pos ? `<div class="gemeo-pos">${esc(g.pos)}</div>` : ''}
         ${g.img
           ? `<img class="gemeo-photo" src="${esc(g.img)}" alt="${esc(g.name)}" loading="lazy" onerror="this.style.display='none'">`
           : `<div class="gemeo-photo" style="display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:3rem;color:var(--saccent);opacity:.4">${esc(g.name.charAt(0))}</div>`}
@@ -728,8 +696,7 @@ document.addEventListener('DOMContentLoaded', function () {
     c.innerHTML =
       `<p style="max-width:720px;margin:0 auto 2rem;text-align:center;font-size:.92rem;color:var(--stext2);line-height:1.85">${gemeos.intro}</p>
        <div class="gemeos-grid">${cardHTML(gemeos.membros[0])}<div class="gemeos-vs" aria-hidden="true">VS</div>${cardHTML(gemeos.membros[1])}</div>
-       ${truque}
-       <p style="max-width:720px;margin:1.6rem auto 0;text-align:center;font-size:.85rem;color:var(--stext2);font-style:italic;line-height:1.8">💡 ${gemeos.nota}</p>`;
+       ${truque}`;
   }
 
   /* ── Render: Cortis Ball ── */
@@ -740,10 +707,10 @@ document.addEventListener('DOMContentLoaded', function () {
        <div class="cortisball-grid">${cortisBall.items.map(it =>
         `<article class="cortisball-card reveal">
            ${it.img
-             ? `<img class="cortisball-img" src="${esc(it.img)}" alt="Cortis Ball de ${esc(it.member)}" loading="lazy" onerror="this.style.display='none'">`
+             ? `<img class="cortisball-img" src="${esc(it.img)}" alt="Cortis Ball ${esc(it.name)}" loading="lazy" onerror="this.style.display='none'">`
              : `<div class="cortisball-img" style="display:flex;align-items:center;justify-content:center;font-size:2.4rem">🟢</div>`}
-           <div class="cortisball-name">Cortis Ball</div>
-           <div class="cortisball-member">${esc(it.member)}</div>
+           <div class="cortisball-name">${esc(it.name)}</div>
+           <div class="cortisball-member">${esc(it.rep)}</div>
          </article>`).join('')}</div>`;
   }
 
@@ -778,7 +745,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ── Seletor de tema (em memória, sem localStorage) ── */
-  let currentTheme = 'verde-escuro';
+  let currentTheme = 'verde-claro';
   function applyTheme(key) {
     if (!THEME_CLASS[key]) return;
     Object.values(THEME_CLASS).forEach(cls => document.body.classList.remove(cls));
@@ -811,7 +778,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!hits.length) { searchResults.innerHTML = `<div class="search-empty">Nada encontrado para “${esc(q)}”</div>`; return; }
     searchResults.innerHTML = hits.slice(0, 12).map(h => {
       const thumb = h.img
-        ? `<img class="search-result-thumb" src="${esc(h.img)}" alt="">`
+        ? `<img class="search-result-thumb" src="${esc(h.img)}" alt="" loading="lazy">`
         : `<div class="search-result-thumb">${h.tag === 'Membro' ? '👤' : h.tag === 'Álbum' ? '💿' : h.tag === 'Curiosidade' ? '💡' : '🔗'}</div>`;
       return `<button class="search-result-item" type="button" data-type="${h.type}" data-idx="${h.idx ?? ''}" data-anchor="${h.anchor || ''}">${thumb}<div class="search-result-info"><div class="search-result-title">${esc(h.title)}</div><div class="search-result-sub">${esc(h.sub || '')}</div></div><span class="search-result-tag">${esc(h.tag)}</span></button>`;
     }).join('');
@@ -985,7 +952,7 @@ document.addEventListener('DOMContentLoaded', function () {
   renderCortisBall();
   renderStream();
   renderCoer();
-  applyTheme('verde-escuro');
+  applyTheme('verde-claro');
   setTimeout(initReveal, 150);
 
 }); // DOMContentLoaded

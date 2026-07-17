@@ -6,6 +6,8 @@ os "gêmeos" Seonghyeon e Keonho, a Cortis Ball e um guia para novos **COER**.
 
 > **CORTIS** = acrônimo de *COLOR OUTSIDE THE LINES* (선 밖에 색칠하다) — "pensar livremente e romper os padrões do mundo".
 
+**Conceito na fanpage:** o grupo é uma *"young creator crew"* — **não há posições fixas**; todos participam de composição, produção, coreografia, vídeos e direção visual. O único papel fixo é o de **líder (Martin)**. Os cards da seção **Sobre** têm efeito de *hover* (o card "acende") e a Cortis Ball tem 4 versões (padrão + ACAI/REDRED/TNT).
+
 ## Stack
 
 - **HTML5 semântico** — [index.html](index.html) + página de erro [404.html](404.html)
@@ -33,12 +35,12 @@ Qualquer uma das opções:
 
 Visual **vintage/Y2K**. O tema troca o site inteiro (fundo, superfícies, texto e accent) via classe no `<body>`.
 O seletor fica na navbar (os 5 swatches) e o tema é mantido **em memória** durante a navegação
-(sem `localStorage`). Tema padrão: **Sage** (funciona como base, mesmo sendo claro).
+(sem `localStorage`). Tema padrão (carrega na primeira visita): **Creme**. Sage continua como tema secundário.
 
 | Tema | Swatch (`data-theme`) | Classe no `<body>` | Fundo → Accent |
 |------|-----------------------|--------------------|----------------|
-| Sage vintage *(padrão)* | `verde-escuro` | `theme-green-dark` | `#7A8E78` → detalhe **`#352D2E`** (cards sage escuros com texto creme `#F1ECE5`) |
-| Creme *(claro)* | `verde-claro` | `theme-green-light` | `#F1ECE5` → detalhe **`#38302F`** (realce sage) |
+| Creme *(padrão)* | `verde-claro` | `theme-green-light` | `#F1ECE5` → detalhe **`#38302F`** (realce sage) |
+| Sage vintage | `verde-escuro` | `theme-green-dark` | `#7A8E78` → detalhe **`#352D2E`** (cards sage escuros com texto creme `#F1ECE5`) |
 | REDRED | `redred` | `theme-redred` | `#930C11` |
 | ACAI | `acai` | `theme-acai` | `#7DA641` |
 | TNT | `tnt` | `theme-tnt` | `#4A5052` (detalhe vermelho no accent-2) |
@@ -52,17 +54,15 @@ Acessibilidade: `:focus-visible` visível em todos os temas, `prefers-reduced-mo
 
 ## Discografia
 
-Grupo em ascensão — poucos lançamentos, cada um detalhado a fundo (cada card abre um modal com a tracklist).
+**3 lançamentos** (2 EPs + 1 single), cada um como **card clicável que abre um modal** com informações e tracklist.
 
-**2025 — COLOR OUTSIDE THE LINES** · 1º EP · 08/09/2025 · faixa-título *What You Want* · estreou **#15 na Billboard 200**
-- Singles: *GO!* (11/08/2025, pré-single) · *What You Want* (18/08/2025, estreia) · *FaSHioN* (08/09/2025)
+**EP 1 — COLOR OUTSIDE THE LINES** · 08/09/2025 · faixa-título *What You Want* · estreou **#15 na Billboard 200**
+- Faixas (6): *GO! · What You Want · FaSHioN · JoyRide · Lullaby · What You Want (feat. Teezo Touchdown)*
 
-**2026 — GREENGREEN** · 2º EP · 04/05/2026 · faixa-título **REDRED** (pré-lançada em 20/04/2026) · **#3 na Billboard 200**, +1,1 milhão de cópias no 1º dia
-- Tracklist (6 faixas): **TNT · REDRED · ACAI · YOUNGCREATORCREW · Wassup · Blue Lips**
-- ⚠️ *TNT*, *REDRED* e *ACAI* são **faixas deste EP**, não singles avulsos.
+**EP 2 — GREENGREEN** · 04/05/2026 · faixa-título **REDRED** (pré-lançada em 20/04/2026) · **#3 na Billboard 200**, +1,1 milhão de cópias no 1º dia
+- Faixas (6): **TNT · REDRED · ACAI · YOUNGCREATORCREW · Wassup · Blue Lips**
 
-**Outros 2026**
-- *Mention Me* (13/02/2026) — OST do filme **GOAT**
+**Single — Mention Me** · 13/02/2026 · OST do filme **GOAT** (Sony Pictures Animation)
 
 ## Prêmios
 
@@ -74,13 +74,7 @@ Grupo em ascensão — poucos lançamentos, cada um detalhado a fundo (cada card
 
 O que ainda **falta preencher** hoje em [script.js](script.js) (só o que está de fato pendente):
 
-### Imagens (todas vazias)
-- Fotos dos membros (`membros[].img`)
-- Imagens da Cortis Ball dos membros (`membros[].ballImg`)
-- Fotos da galeria (`galeria[].url`)
-- Imagens das bolinhas na seção Cortis Ball (`cortisBall.items[].img`) + detalhes de cada bolinha (nome, cor, se há uma por membro)
-- Capas dos álbuns/singles (`discografia[].img`) — hoje mostram a inicial como fallback
-- Fotos comparativas dos gêmeos (`gemeos.membros[].img`) + as legendas de posição (quem está à esquerda/direita) — preencher junto com as imagens reais
+> **Imagens:** todas as fotos reais já foram inseridas (membros, gêmeos com legendas de posição, capas da discografia, as 4 Cortis Balls, galeria e foto de grupo no hero). Continua pendente apenas o `og:image` oficial no `<head>` (ver "Links oficiais").
 
 ### Timeline (pré-debut)
 - **Formação** — data do anúncio oficial da formação do grupo

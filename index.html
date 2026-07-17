@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
-<body class="theme-green-dark">
+<body class="theme-green-light">
 
 <!-- Skip link (acessibilidade) -->
 <a class="skip-link" href="#membros">Pular para o conteúdo</a>
@@ -60,11 +60,11 @@
 
   <div class="nav-controls">
     <div id="themeControls" class="theme-controls" role="group" aria-label="Selecionar tema de cor">
-      <button class="theme-swatch" data-theme="verde-escuro" title="Verde escuro" aria-label="Tema Verde escuro"></button>
-      <button class="theme-swatch" data-theme="verde-claro"  title="Verde claro"  aria-label="Tema Verde claro"></button>
-      <button class="theme-swatch" data-theme="redred"       title="REDRED"       aria-label="Tema REDRED"></button>
-      <button class="theme-swatch" data-theme="acai"         title="ACAI"         aria-label="Tema ACAI"></button>
-      <button class="theme-swatch" data-theme="tnt"          title="TNT"          aria-label="Tema TNT"></button>
+      <button class="theme-swatch" data-theme="verde-claro"  title="Creme (padrão)" aria-label="Tema Creme"></button>
+      <button class="theme-swatch" data-theme="verde-escuro" title="Sage"           aria-label="Tema Sage"></button>
+      <button class="theme-swatch" data-theme="redred"       title="REDRED"         aria-label="Tema REDRED"></button>
+      <button class="theme-swatch" data-theme="acai"         title="ACAI"           aria-label="Tema ACAI"></button>
+      <button class="theme-swatch" data-theme="tnt"          title="TNT"            aria-label="Tema TNT"></button>
     </div>
     <button class="nav-search-btn" id="searchOpenBtn" title="Buscar" aria-label="Abrir busca">🔍</button>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">☰</button>
@@ -74,6 +74,8 @@
 <!-- ══════════ HERO ══════════ -->
 <header id="hero">
   <div class="hero-bg"></div>
+  <img class="hero-photo" src="assets/grupo.jpg" alt="CORTIS — foto do grupo" fetchpriority="high" />
+  <div class="hero-scrim" aria-hidden="true"></div>
   <canvas id="heroCanvas" aria-hidden="true"></canvas>
   <div class="hero-content">
     <img class="hero-logo-img js-logo-symbol" src="assets/cortis-simbolo-38302F.png" alt="" aria-hidden="true" />
@@ -105,7 +107,7 @@
   <div class="section-header">
     <span class="section-label">OT5</span>
     <h2 class="section-title">Os 5 do CORTIS</h2>
-    <p class="section-desc">Clique em qualquer membro para ver o perfil completo</p>
+    <p class="section-desc">No CORTIS <strong>não há posições fixas</strong>: todos participam de tudo — composição, produção, coreografia, vídeos e direção visual —, como uma <em>"young creator crew"</em>. Martin é o líder. Clique em cada um para ver o perfil.</p>
   </div>
   <div class="members-grid" id="membersGrid"><!-- preenchido pelo script.js --></div>
 </section>
@@ -123,8 +125,8 @@
 <!-- ══════════ TRAJETÓRIA / TIMELINE ══════════ -->
 <section id="timeline" class="section">
   <div class="section-header">
-    <span class="section-label">Trajetória</span>
-    <h2 class="section-title">Da carreira individual à formação</h2>
+    <span class="section-label">Linha do Tempo</span>
+    <h2 class="section-title">Trajetória</h2>
     <p class="section-desc">O caminho de cada membro até se tornarem CORTIS</p>
   </div>
   <div class="timeline-container" id="timelineContainer"><!-- preenchido pelo script.js --></div>
@@ -135,7 +137,7 @@
   <div class="section-header">
     <span class="section-label">Sobre a CORTIS</span>
     <h2 class="section-title">O grupo</h2>
-    <p class="section-desc">O significado do nome, a referência ao cortisol e o conceito de "creator crew"</p>
+    <p class="section-desc">O significado do nome e o conceito de "young creator crew"</p>
   </div>
   <div class="historia-container" id="historiaContainer"><!-- preenchido pelo script.js --></div>
 </section>
