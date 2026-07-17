@@ -10,9 +10,9 @@ const esc = s => String(s == null ? '' : s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const ytSearch = t => 'https://www.youtube.com/results?search_query=' + encodeURIComponent('CORTIS ' + t);
 const fallbackBox = (letter, big) =>
-  `<div class="media-fallback" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:${big ? '3rem' : '2rem'};color:var(--accent);opacity:.4;background:var(--surface)">${esc(letter)}</div>`;
+  `<div class="media-fallback" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:${big ? '3rem' : '2rem'};color:var(--saccent);opacity:.4;background:var(--surface)">${esc(letter)}</div>`;
 const mvFallbackThumb = t =>
-  `<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;background:var(--surface)"><span style="font-size:1.6rem;color:var(--accent)">▶</span><span style="font-family:'Anton',sans-serif;font-size:.85rem;letter-spacing:.04em;color:var(--text-2);text-align:center;padding:0 .5rem">${esc(t)}</span></div>`;
+  `<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;background:var(--surface)"><span style="font-size:1.6rem;color:var(--saccent)">▶</span><span style="font-family:'Anton',sans-serif;font-size:.85rem;letter-spacing:.04em;color:var(--stext2);text-align:center;padding:0 .5rem">${esc(t)}</span></div>`;
 
 /* ============================================================
    DADOS
@@ -359,6 +359,23 @@ const THEME_CLASS = {
   "tnt": "theme-tnt"
 };
 
+/* Logo por tema (símbolo → navbar/hero; completa → intro).
+   Sage e creme usam a versão #38302F; os temas de música usam a versão colorida. */
+const LOGO_SYMBOL = {
+  "verde-escuro": "assets/cortis-simbolo-38302F.png",
+  "verde-claro":  "assets/cortis-simbolo-38302F.png",
+  "redred":       "assets/cortis-simbolo-redred.png",
+  "acai":         "assets/cortis-simbolo-acai.png",
+  "tnt":          "assets/cortis-simbolo-tnt.png"
+};
+const LOGO_FULL = {
+  "verde-escuro": "assets/cortis-logo-full-38302F.png",
+  "verde-claro":  "assets/cortis-logo-full-38302F.png",
+  "redred":       "assets/cortis-logo-full-redred.png",
+  "acai":         "assets/cortis-logo-full-acai.png",
+  "tnt":          "assets/cortis-logo-full-tnt.png"
+};
+
 /* ============================================================
    INICIALIZAÇÃO
    ============================================================ */
@@ -570,24 +587,24 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ── Render: Prêmios (2 tabelas — programas musicais + cerimônias) ── */
   function renderPremios() {
     const c = document.getElementById('premiosContainer'); if (!c) return;
-    const cell = "padding:.55rem .7rem;border-bottom:1px solid var(--border);font-size:.82rem;color:var(--text)";
-    const th = "padding:.55rem .7rem;text-align:left;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--border-hover)";
-    const foot = "font-size:.72rem;color:var(--text-2);font-style:italic;margin-top:.7rem;line-height:1.6";
-    const sub = "font-family:'Anton',sans-serif;font-size:1.3rem;letter-spacing:.03em;color:var(--text);text-align:center;margin-bottom:1rem";
-    const wrap = inner => `<div style="overflow-x:auto;border:1px solid var(--border);border-radius:14px;background:var(--card)"><table style="width:100%;border-collapse:collapse">${inner}</table></div>`;
+    const cell = "padding:.55rem .7rem;border-bottom:1px solid color-mix(in srgb, var(--stext) 16%, transparent);font-size:.82rem;color:var(--stext)";
+    const th = "padding:.55rem .7rem;text-align:left;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--saccent);border-bottom:1px solid color-mix(in srgb, var(--stext) 30%, transparent)";
+    const foot = "font-size:.72rem;color:var(--stext2);font-style:italic;margin-top:.7rem;line-height:1.6";
+    const sub = "font-family:'Anton',sans-serif;font-size:1.3rem;letter-spacing:.03em;color:var(--stext);text-align:center;margin-bottom:1rem";
+    const wrap = inner => `<div style="overflow-x:auto;border:1px solid color-mix(in srgb, var(--stext) 16%, transparent);border-radius:14px;background:var(--card)"><table style="width:100%;border-collapse:collapse">${inner}</table></div>`;
 
     const total = `<div style="text-align:center;margin-bottom:2.2rem">
-        <div style="font-family:'Anton',sans-serif;font-size:clamp(2.4rem,9vw,4rem);line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent">${premios.total} troféus</div>
-        <div style="font-size:.82rem;color:var(--text-2);margin-top:.4rem">11 vitórias em programas musicais + 11 prêmios em cerimônias</div>
-        <div style="font-size:.72rem;color:var(--text-2);opacity:.8;margin-top:.3rem">Não inclui indicações, posições em paradas, vendas ou certificados.</div>
+        <div class="premios-total">${premios.total} troféus</div>
+        <div style="font-size:.82rem;color:var(--stext2);margin-top:.4rem">11 vitórias em programas musicais + 11 prêmios em cerimônias</div>
+        <div style="font-size:.72rem;color:var(--stext2);opacity:.8;margin-top:.3rem">Não inclui indicações, posições em paradas, vendas ou certificados.</div>
       </div>`;
 
     const rowsA = premios.musicShows.map(w =>
-      `<tr><td style="${cell};font-family:'Anton',sans-serif;color:var(--accent);width:52px">${esc(w.n)}</td><td style="${cell}">${esc(w.date)}</td><td style="${cell}">${esc(w.program)}</td></tr>`).join('');
+      `<tr><td style="${cell};font-family:'Anton',sans-serif;color:var(--saccent);width:52px">${esc(w.n)}</td><td style="${cell}">${esc(w.date)}</td><td style="${cell}">${esc(w.program)}</td></tr>`).join('');
     const blocoA = `<div class="reveal" style="margin-bottom:2.6rem">
         <div style="${sub}">“REDRED” — 11 vitórias em programas musicais</div>
         ${wrap(`<thead><tr><th style="${th}">#</th><th style="${th}">Data</th><th style="${th}">Programa</th></tr></thead><tbody>${rowsA}</tbody>`)}
-        <div style="background:var(--glass);border:1px solid var(--border-hover);border-radius:14px;padding:1rem 1.2rem;margin-top:1.2rem;display:flex;flex-direction:column;gap:.5rem;font-size:.86rem;color:var(--text);line-height:1.55">
+        <div style="background:color-mix(in srgb, var(--stext) 10%, transparent);border:1px solid color-mix(in srgb, var(--stext) 30%, transparent);border-radius:14px;padding:1rem 1.2rem;margin-top:1.2rem;display:flex;flex-direction:column;gap:.5rem;font-size:.86rem;color:var(--stext);line-height:1.55">
           <div>🏆 <strong>Grand slam:</strong> venceu nos 5 principais programas — Show Champion, M Countdown, Music Bank, Show! Music Core e Inkigayo.</div>
           <div>👑 <strong>Triple crown</strong> no Show! Music Core (3 vitórias) e também no Inkigayo (3 vitórias).</div>
         </div>
@@ -595,7 +612,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>`;
 
     const rowsB = premios.cerimonias.map(a =>
-      `<tr><td style="${cell};color:var(--accent);width:56px">${esc(a.year)}</td><td style="${cell}">${esc(a.event)}${a.confirmar ? ' <span style="color:var(--text-2)" title="fonte ainda não confirmada de forma independente">*</span>' : ''}</td><td style="${cell}">${esc(a.award)}</td></tr>`).join('');
+      `<tr><td style="${cell};color:var(--saccent);width:56px">${esc(a.year)}</td><td style="${cell}">${esc(a.event)}${a.confirmar ? ' <span style="color:var(--stext2)" title="fonte ainda não confirmada de forma independente">*</span>' : ''}</td><td style="${cell}">${esc(a.award)}</td></tr>`).join('');
     const blocoB = `<div class="reveal">
         <div style="${sub}">11 prêmios em cerimônias</div>
         ${wrap(`<thead><tr><th style="${th}">Ano</th><th style="${th}">Premiação</th><th style="${th}">Prêmio</th></tr></thead><tbody>${rowsB}</tbody>`)}
@@ -683,7 +700,7 @@ document.addEventListener('DOMContentLoaded', function () {
       item.setAttribute('aria-label', 'Ampliar foto: ' + g.alt);
       const media = g.url
         ? `<img src="${esc(g.url)}" alt="${esc(g.alt)}" loading="lazy" onerror="this.style.opacity='0.15'">`
-        : `<div style="aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:2rem;color:var(--accent);opacity:.35;background:var(--surface)">${esc(g.alt.charAt(0))}</div>`;
+        : `<div style="aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:2rem;color:var(--saccent);opacity:.4;background:var(--surface)">${esc(g.alt.charAt(0))}</div>`;
       item.innerHTML = `${media}<div class="gallery-hover"><span class="gallery-name">${esc(g.alt)}</span></div>`;
       item.addEventListener('click', () => openLightbox(i));
       grid.appendChild(item);
@@ -698,21 +715,21 @@ document.addEventListener('DOMContentLoaded', function () {
       `<article class="gemeo-card reveal">
         ${g.img
           ? `<img class="gemeo-photo" src="${esc(g.img)}" alt="${esc(g.name)}" loading="lazy" onerror="this.style.display='none'">`
-          : `<div class="gemeo-photo" style="display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:3rem;color:var(--accent);opacity:.4">${esc(g.name.charAt(0))}</div>`}
+          : `<div class="gemeo-photo" style="display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:3rem;color:var(--saccent);opacity:.4">${esc(g.name.charAt(0))}</div>`}
         <div class="gemeo-name">${esc(g.name)}</div>
         <div class="gemeo-sub">${esc(g.sub)}</div>
         <div class="gemeo-traits">${g.traits.map(t => `<div class="gemeo-trait">${t}</div>`).join('')}</div>
       </article>`;
     const truque =
-      `<div style="max-width:720px;margin:1.6rem auto 0;background:var(--glass);border:1px solid var(--border-hover);border-radius:16px;padding:1.2rem 1.4rem">
-        <div style="font-family:'Anton',sans-serif;letter-spacing:.04em;color:var(--accent);font-size:1.05rem;margin-bottom:.6rem">⚡ Truque rápido</div>
-        <div style="display:flex;flex-direction:column;gap:.45rem">${gemeos.truque.map(t => `<div style="font-size:.9rem;color:var(--text);line-height:1.5">${t}</div>`).join('')}</div>
+      `<div style="max-width:720px;margin:1.6rem auto 0;background:color-mix(in srgb, var(--stext) 10%, transparent);border:1px solid color-mix(in srgb, var(--stext) 30%, transparent);border-radius:16px;padding:1.2rem 1.4rem">
+        <div style="font-family:'Anton',sans-serif;letter-spacing:.04em;color:var(--saccent);font-size:1.05rem;margin-bottom:.6rem">⚡ Truque rápido</div>
+        <div style="display:flex;flex-direction:column;gap:.45rem">${gemeos.truque.map(t => `<div style="font-size:.9rem;color:var(--stext);line-height:1.5">${t}</div>`).join('')}</div>
       </div>`;
     c.innerHTML =
-      `<p style="max-width:720px;margin:0 auto 2rem;text-align:center;font-size:.92rem;color:var(--text-2);line-height:1.85">${gemeos.intro}</p>
+      `<p style="max-width:720px;margin:0 auto 2rem;text-align:center;font-size:.92rem;color:var(--stext2);line-height:1.85">${gemeos.intro}</p>
        <div class="gemeos-grid">${cardHTML(gemeos.membros[0])}<div class="gemeos-vs" aria-hidden="true">VS</div>${cardHTML(gemeos.membros[1])}</div>
        ${truque}
-       <p style="max-width:720px;margin:1.6rem auto 0;text-align:center;font-size:.85rem;color:var(--text-2);font-style:italic;line-height:1.8">💡 ${gemeos.nota}</p>`;
+       <p style="max-width:720px;margin:1.6rem auto 0;text-align:center;font-size:.85rem;color:var(--stext2);font-style:italic;line-height:1.8">💡 ${gemeos.nota}</p>`;
   }
 
   /* ── Render: Cortis Ball ── */
@@ -772,6 +789,9 @@ document.addEventListener('DOMContentLoaded', function () {
       s.classList.toggle('active', active);
       s.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
+    // troca a cor da logo junto com o tema
+    if (LOGO_SYMBOL[key]) document.querySelectorAll('.js-logo-symbol').forEach(img => { img.src = LOGO_SYMBOL[key]; });
+    if (LOGO_FULL[key]) document.querySelectorAll('.js-logo-full').forEach(img => { img.src = LOGO_FULL[key]; });
   }
   document.querySelectorAll('.theme-swatch').forEach(s => {
     s.addEventListener('click', () => applyTheme(s.dataset.theme));

@@ -31,17 +31,21 @@ Qualquer uma das opções:
 
 ## Os 5 temas
 
-O tema troca o site inteiro (fundo, superfícies, texto e accent) via classe no `<body>`.
+Visual **vintage/Y2K**. O tema troca o site inteiro (fundo, superfícies, texto e accent) via classe no `<body>`.
 O seletor fica na navbar (os 5 swatches) e o tema é mantido **em memória** durante a navegação
-(sem `localStorage`). Tema padrão: **Verde escuro**.
+(sem `localStorage`). Tema padrão: **Sage** (funciona como base, mesmo sendo claro).
 
-| Tema | Swatch (`data-theme`) | Classe no `<body>` | Accent |
-|------|-----------------------|--------------------|--------|
-| Verde escuro *(padrão)* | `verde-escuro` | `theme-green-dark` | `#A7EAE1` |
-| Verde claro | `verde-claro` | `theme-green-light` | `#2A5650` |
+| Tema | Swatch (`data-theme`) | Classe no `<body>` | Fundo → Accent |
+|------|-----------------------|--------------------|----------------|
+| Sage vintage *(padrão)* | `verde-escuro` | `theme-green-dark` | `#7A8E78` → detalhe **`#352D2E`** (cards sage escuros com texto creme `#F1ECE5`) |
+| Creme *(claro)* | `verde-claro` | `theme-green-light` | `#F1ECE5` → detalhe **`#38302F`** (realce sage) |
 | REDRED | `redred` | `theme-redred` | `#930C11` |
 | ACAI | `acai` | `theme-acai` | `#7DA641` |
 | TNT | `tnt` | `theme-tnt` | `#4A5052` (detalhe vermelho no accent-2) |
+
+> Os nomes de classe (`theme-green-dark`/`theme-green-light`) foram mantidos por compatibilidade — hoje representam **sage** e **creme**, não mais verdes.
+
+**Logo oficial** (PNGs em `assets/`): símbolo na **navbar** e no **hero** (acima do título), logo completa na **intro**. A cor da logo troca junto com o tema (versão `#38302F` no sage/creme; versões coloridas no REDRED/ACAI/TNT). Favicon: `assets/favicon-cortis.png`.
 
 Acessibilidade: `:focus-visible` visível em todos os temas, `prefers-reduced-motion` respeitado
 (desliga animações e o canvas do hero), modais/lightbox/drawer/busca fecham com **Escape** e prendem/restauram o foco.

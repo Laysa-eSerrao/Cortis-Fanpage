@@ -20,28 +20,28 @@ ul { list-style: none; }
    --on-accent = cor de texto legível SOBRE o accent (dentro do bloco de tema)
    ============================================================ */
 
-/* Verde escuro (padrão) */
+/* Sage vintage (PADRÃO) — página em sage claro, cards em sage escuro + detalhe #352D2E */
 :root, .theme-green-dark {
-  --bg:        #0F241C;
-  --surface:   #16332A;
-  --text:      #EAF7F4;
-  --text-2:    #8FBDB4;
-  --border:    #2A5650;
-  --accent:    #A7EAE1;
-  --accent-2:  #2A5650;
-  --on-accent: #0F241C;
-  color-scheme: dark;
+  --bg:        #7A8E78;
+  --surface:   #6B7F69;
+  --text:      #2A331F;   /* texto escuro SOBRE --bg (sage claro) */
+  --text-2:    #3D4A34;
+  --border:    #352D2E;   /* detalhe escuro */
+  --accent:    #352D2E;   /* detalhe escuro — botões, badges, divisórias */
+  --accent-2:  #F1ECE5;   /* creme — realces / texto sobre superfícies escuras */
+  --on-accent: #F1ECE5;   /* texto sobre o accent escuro */
+  color-scheme: light;
 }
 
-/* Verde claro */
+/* Creme (tema claro) */
 .theme-green-light {
-  --bg:        #EAF6F3;
+  --bg:        #F1ECE5;
   --surface:   #FFFFFF;
-  --text:      #12332D;
-  --text-2:    #4E7A72;
-  --border:    #A7EAE1;
-  --accent:    #2A5650;
-  --accent-2:  #A7EAE1;
+  --text:      #38302F;
+  --text-2:    #8A7F74;
+  --border:    #E0D8CD;
+  --accent:    #38302F;
+  --accent-2:  #7A8E78;   /* sage como realce */
   --on-accent: #FFFFFF;
   color-scheme: light;
 }
@@ -95,6 +95,18 @@ body {
   --glow:          0 0 60px color-mix(in srgb, var(--accent) 30%, transparent),
                    0 0 130px color-mix(in srgb, var(--accent) 12%, transparent);
   --scrim:         color-mix(in srgb, var(--bg) 88%, transparent);
+  /* texto sobre superfícies/cards (usado em estilos inline do JS) — por padrão = texto normal */
+  --stext:         var(--text);
+  --stext2:        var(--text-2);
+  --saccent:       var(--accent);
+}
+
+/* Sage: cards mais escuros (melhor contraste do texto creme) + texto de superfície em creme */
+.theme-green-dark {
+  --card:    color-mix(in srgb, var(--accent) 28%, var(--surface));
+  --stext:   #F1ECE5;
+  --stext2:  #E4E0D5;
+  --saccent: #F1ECE5;
 }
 
 /* ── BASE ── */
@@ -373,9 +385,9 @@ body {
 .member-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
 .member-card:hover .member-img-wrap img { transform: scale(1.07); }
 .member-overlay {
+  /* scrim escuro fixo (independe do tema) — garante texto claro legível sobre a foto */
   position: absolute; inset: 0;
-  background: linear-gradient(to top, color-mix(in srgb, var(--bg) 96%, transparent) 0%,
-              color-mix(in srgb, var(--bg) 35%, transparent) 45%, transparent 72%);
+  background: linear-gradient(to top, rgba(18,16,15,.92) 0%, rgba(18,16,15,.45) 42%, transparent 72%);
 }
 .member-ball-badge {
   position: absolute; top: .7rem; right: .7rem;
@@ -390,9 +402,9 @@ body {
   background: var(--accent); color: var(--on-accent);
   padding: .2rem .6rem; border-radius: 50px; margin-bottom: .5rem;
 }
-.member-stage { font-family: 'Anton', sans-serif; font-size: 1.7rem; letter-spacing: .04em; line-height: 1; color: var(--text); }
-.member-name { font-size: .76rem; color: var(--text-2); letter-spacing: .06em; margin-top: .2rem; }
-.member-role { font-size: .7rem; color: var(--accent); margin-top: .25rem; }
+.member-stage { font-family: 'Anton', sans-serif; font-size: 1.7rem; letter-spacing: .04em; line-height: 1; color: #F5F1EA; }
+.member-name { font-size: .76rem; color: rgba(245,241,234,.82); letter-spacing: .06em; margin-top: .2rem; }
+.member-role { font-size: .7rem; color: rgba(245,241,234,.92); margin-top: .25rem; }
 
 /* ============================================================
    MODAIS (membro + álbum)
@@ -586,9 +598,9 @@ body {
 .mv-featured-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
 .mv-featured-card:hover .mv-featured-thumb img { transform: scale(1.03); }
 .mv-featured-overlay {
+  /* scrim escuro fixo — texto claro sobre a thumbnail em qualquer tema */
   position: absolute; inset: 0;
-  background: linear-gradient(to top, color-mix(in srgb, var(--bg) 92%, transparent) 0%,
-              color-mix(in srgb, var(--bg) 20%, transparent) 55%, transparent 85%);
+  background: linear-gradient(to top, rgba(18,16,15,.9) 0%, rgba(18,16,15,.35) 55%, transparent 85%);
 }
 .mv-featured-play {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -605,8 +617,8 @@ body {
   background: var(--accent); color: var(--on-accent);
   padding: .22rem .7rem; border-radius: 50px; margin-bottom: .5rem;
 }
-.mv-featured-title { font-family: 'Anton', sans-serif; font-size: clamp(1.6rem, 6vw, 2.8rem); letter-spacing: .03em; color: var(--text); line-height: 1; }
-.mv-featured-year { font-size: .78rem; color: var(--text-2); margin-top: .3rem; }
+.mv-featured-title { font-family: 'Anton', sans-serif; font-size: clamp(1.6rem, 6vw, 2.8rem); letter-spacing: .03em; color: #F5F1EA; line-height: 1; }
+.mv-featured-year { font-size: .78rem; color: rgba(245,241,234,.75); margin-top: .3rem; }
 
 .mvs-wrap { display: flex; align-items: center; gap: .6rem; }
 .mvs-scroll {
@@ -944,4 +956,140 @@ body {
   #heroCanvas { display: none !important; }
   .intro-fill { animation: none; width: 100%; }
   .scroll-line { animation: none; }
+  .intro-logo-img { animation: none; }
+}
+
+/* ============================================================
+   LOGO (imagens PNG — navbar, intro, hero)
+   ============================================================ */
+.nav-logo { display: inline-flex; align-items: center; padding: .2rem 0; }
+.nav-logo-img { height: 36px; width: auto; display: block; }
+.intro-logo-img { width: min(260px, 72vw); height: auto; display: block; margin: 0 auto; animation: introPop 1s cubic-bezier(.2,.8,.2,1) both; }
+.hero-logo-img { width: clamp(112px, 20vw, 150px); height: auto; display: block; margin: 0 auto 1.2rem; }
+
+/* .premios-total: número grande dos troféus (gradiente por padrão; sólido nos temas claros) */
+.premios-total {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(2.4rem, 9vw, 4rem);
+  line-height: 1;
+  background: var(--grad);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+
+/* ============================================================
+   SAGE (tema padrão) — texto creme legível sobre superfícies/cards escuros
+   As seções .section (fundo sage claro) mantêm texto escuro; só as superfícies escuras invertem.
+   ============================================================ */
+.theme-green-dark .section-alt .section-label { color: var(--accent-2); }
+.theme-green-dark .section-alt .section-title { color: #F1ECE5; }
+.theme-green-dark .section-alt .section-desc  { color: #E4E0D5; }
+
+.theme-green-dark .stat-label { color: #E4E0D5; }
+.theme-green-dark .stat-item { border-color: color-mix(in srgb, #F1ECE5 16%, transparent); }
+
+.theme-green-dark .disco-name { color: #F1ECE5; }
+.theme-green-dark .disco-year { color: #E4E0D5; }
+.theme-green-dark .disco-track { color: #F1ECE5; }
+.theme-green-dark .disco-cover-fallback { color: #F1ECE5; }
+
+.theme-green-dark .fact-card { border-left-color: var(--accent-2); }
+.theme-green-dark .fact-tag { color: #F1ECE5; }
+.theme-green-dark .fact-text { color: #E4E0D5; }
+.theme-green-dark .fact-text strong,
+.theme-green-dark .fact-text em { color: #F1ECE5; }
+
+.theme-green-dark .tl-year { color: #F1ECE5; }
+.theme-green-dark .tl-event { color: #F1ECE5; }
+.theme-green-dark .tl-desc { color: #E4E0D5; }
+.theme-green-dark .tl-badge { color: #F1ECE5; border-color: color-mix(in srgb, #F1ECE5 40%, transparent); }
+
+.theme-green-dark .historia-card { border-left-color: var(--accent-2); }
+.theme-green-dark .historia-title { color: #F1ECE5; }
+.theme-green-dark .historia-text { color: #E4E0D5; }
+.theme-green-dark .historia-text strong { color: #F1ECE5; }
+
+.theme-green-dark .gemeo-name { color: #F1ECE5; }
+.theme-green-dark .gemeo-sub { color: #E4E0D5; }
+.theme-green-dark .gemeo-trait { color: #E4E0D5; }
+.theme-green-dark .gemeo-trait strong { color: #F1ECE5; }
+.theme-green-dark .gemeo-trait::before { color: #F1ECE5; }
+
+.theme-green-dark .cortisball-name { color: #F1ECE5; }
+.theme-green-dark .cortisball-member { color: #E4E0D5; }
+
+.theme-green-dark .stream-name { color: #F1ECE5; }
+.theme-green-dark .stream-action { color: #E4E0D5; }
+
+.theme-green-dark .coer-title { color: #F1ECE5; }
+.theme-green-dark .coer-text { color: #E4E0D5; }
+.theme-green-dark .coer-text strong { color: #F1ECE5; }
+.theme-green-dark .coer-word { color: #F1ECE5; }
+.theme-green-dark .coer-def { color: #E4E0D5; }
+
+.theme-green-dark .mv-title { color: #F1ECE5; }
+.theme-green-dark .mv-year { color: #E4E0D5; }
+.theme-green-dark .mv-views { color: #F1ECE5; }
+
+.theme-green-dark .modal-stage { color: #F1ECE5; }
+.theme-green-dark .modal-fullname { color: #E4E0D5; }
+.theme-green-dark .modal-pill { color: #F1ECE5; border-color: color-mix(in srgb, #F1ECE5 35%, transparent); }
+.theme-green-dark .modal-stat-label { color: #E4E0D5; }
+.theme-green-dark .modal-stat-value { color: #F1ECE5; }
+.theme-green-dark .modal-bio, .theme-green-dark .modal-fact { color: #E4E0D5; }
+.theme-green-dark .modal-fact::before { color: #F1ECE5; }
+.theme-green-dark .modal-divider { background: color-mix(in srgb, #F1ECE5 28%, transparent); }
+.theme-green-dark .modal-close-btn { color: #F1ECE5; }
+.theme-green-dark .album-modal-title { color: #F1ECE5; }
+.theme-green-dark .album-modal-meta { color: #E4E0D5; }
+.theme-green-dark .album-modal-desc { color: #E4E0D5; }
+.theme-green-dark .album-track { color: #F1ECE5; }
+.theme-green-dark .album-track-num { color: #F1ECE5; }
+.theme-green-dark .album-track.title-track { border-left-color: var(--accent-2); }
+
+.theme-green-dark .footer-tagline,
+.theme-green-dark .footer-links a,
+.theme-green-dark .footer-copy { color: #E4E0D5; }
+.theme-green-dark .footer-links a:hover { color: #F1ECE5; }
+
+.theme-green-dark .search-input { color: #F1ECE5; }
+.theme-green-dark .search-input-icon,
+.theme-green-dark .search-close,
+.theme-green-dark .search-empty { color: #E4E0D5; }
+.theme-green-dark .search-result-title { color: #F1ECE5; }
+.theme-green-dark .search-result-sub { color: #E4E0D5; }
+.theme-green-dark .search-result-tag { color: #F1ECE5; border-color: color-mix(in srgb, #F1ECE5 35%, transparent); }
+
+.theme-green-dark .drawer-nav a { color: #E4E0D5; }
+.theme-green-dark .drawer-nav a:hover { color: #F1ECE5; }
+.theme-green-dark .drawer-close { color: #E4E0D5; }
+.theme-green-dark .drawer-footer { color: #E4E0D5; }
+
+/* texto-gradiente sobre superfície escura → creme sólido */
+.theme-green-dark .stat-num,
+.theme-green-dark .footer-logo,
+.theme-green-dark .drawer-logo,
+.theme-green-dark .premios-total {
+  background: none;
+  -webkit-text-fill-color: #F1ECE5;
+  color: #F1ECE5;
+}
+/* a página 404 fica sobre --bg (sage claro) → charcoal sólido */
+.theme-green-dark .notfound-code {
+  background: none;
+  -webkit-text-fill-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ============================================================
+   CREME (tema claro) — só ajusta o texto-gradiente para sólido (melhor contraste sobre claro)
+   ============================================================ */
+.theme-green-light .stat-num,
+.theme-green-light .footer-logo,
+.theme-green-light .drawer-logo,
+.theme-green-light .notfound-code,
+.theme-green-light .premios-total {
+  background: none;
+  -webkit-text-fill-color: var(--accent);
+  color: var(--accent);
 }
