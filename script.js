@@ -234,7 +234,7 @@ const gemeos = {
   intro: "No começo é fácil confundir os dois, principalmente porque ambos nasceram em 2009 e costumam aparecer juntos. O jeito mais confiável de diferenciar é observar o formato do rosto, os olhos e o maxilar.",
   membros: [
     {
-      name: "Seonghyeon", sub: "Rosto fino · olhar suave", img: "assets/gemeo-seonghyeon.jpg", pos: "Foto à esquerda",
+      name: "Seonghyeon", sub: "Rosto fino · olhar suave", img: "assets/gemeo-seonghyeon.jpg", photoClass: "gemeo-photo--seonghyeon",
       traits: [
         "Rosto mais comprido, estreito e delicado",
         "Queixo mais fino, formando um rosto próximo de um “V”",
@@ -245,7 +245,7 @@ const gemeos = {
       ]
     },
     {
-      name: "Keonho", sub: "Sobrancelha forte · olhar intenso", img: "assets/gemeo-keonho.jpg", pos: "Foto à direita",
+      name: "Keonho", sub: "Sobrancelha forte · olhar intenso", img: "assets/gemeo-keonho.jpg", photoClass: "gemeo-photo--keonho",
       traits: [
         "Rosto mais largo e estruturado",
         "Maxilar e maçãs do rosto mais marcados",
@@ -677,12 +677,10 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ── Render: Os Gêmeos ── */
   function renderGemeos() {
     const c = document.getElementById('gemeosContainer'); if (!c) return;
-    // Legendas de posição: Seonghyeon à esquerda, Keonho à direita (campo g.pos)
     const cardHTML = g =>
       `<article class="gemeo-card reveal">
-        ${g.pos ? `<div class="gemeo-pos">${esc(g.pos)}</div>` : ''}
         ${g.img
-          ? `<img class="gemeo-photo" src="${esc(g.img)}" alt="${esc(g.name)}" loading="lazy" onerror="this.style.display='none'">`
+          ? `<div class="gemeo-photo-frame"><img class="gemeo-photo${g.photoClass ? ' ' + g.photoClass : ''}" src="${esc(g.img)}" alt="${esc(g.name)}" loading="lazy" onerror="this.style.display='none'"></div>`
           : `<div class="gemeo-photo" style="display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:3rem;color:var(--saccent);opacity:.4">${esc(g.name.charAt(0))}</div>`}
         <div class="gemeo-name">${esc(g.name)}</div>
         <div class="gemeo-sub">${esc(g.sub)}</div>
@@ -751,17 +749,53 @@ document.addEventListener('DOMContentLoaded', function () {
     Object.values(THEME_CLASS).forEach(cls => document.body.classList.remove(cls));
     document.body.classList.add(THEME_CLASS[key]);
     currentTheme = key;
-    document.querySelectorAll('.theme-swatch').forEach(s => {
-      const active = s.dataset.theme === key;
-      s.classList.toggle('active', active);
-      s.setAttribute('aria-pressed', active ? 'true' : 'false');
+    document.querySelectorAll('.theme-option').forEach(o => {
+      const active = o.dataset.theme === key;
+      o.classList.toggle('active', active);
+      o.setAttribute('aria-checked', active ? 'true' : 'false');
     });
     // troca a cor da logo junto com o tema
     if (LOGO_SYMBOL[key]) document.querySelectorAll('.js-logo-symbol').forEach(img => { img.src = LOGO_SYMBOL[key]; });
     if (LOGO_FULL[key]) document.querySelectorAll('.js-logo-full').forEach(img => { img.src = LOGO_FULL[key]; });
   }
-  document.querySelectorAll('.theme-swatch').forEach(s => {
-    s.addEventListener('click', () => applyTheme(s.dataset.theme));
+
+  /* ── Dropdown "Modos" (seletor de tema) ── */
+  const themeMenu = document.getElementById('themeMenu');
+  const themeMenuBtn = document.getElementById('themeMenuBtn');
+  const themeMenuList = document.getElementById('themeMenuList');
+  const themeOptions = () => [...(themeMenuList?.querySelectorAll('.theme-option') || [])];
+  function onDocClickTheme(e) { if (themeMenu && !themeMenu.contains(e.target)) closeThemeMenu(false); }
+  function onKeyTheme(e) {
+    if (e.key === 'Escape') { closeThemeMenu(true); return; }
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      const opts = themeOptions(); if (!opts.length) return;
+      e.preventDefault();
+      const i = opts.indexOf(document.activeElement);
+      const next = e.key === 'ArrowDown' ? opts[(i + 1) % opts.length] : opts[(i - 1 + opts.length) % opts.length];
+      next?.focus();
+    }
+  }
+  function openThemeMenu() {
+    themeMenuList.classList.add('open');
+    themeMenuBtn.setAttribute('aria-expanded', 'true');
+    document.addEventListener('click', onDocClickTheme);
+    document.addEventListener('keydown', onKeyTheme);
+    (themeMenuList.querySelector('.theme-option.active') || themeOptions()[0])?.focus();
+  }
+  function closeThemeMenu(focusBtn) {
+    if (!themeMenuList) return;
+    themeMenuList.classList.remove('open');
+    themeMenuBtn.setAttribute('aria-expanded', 'false');
+    document.removeEventListener('click', onDocClickTheme);
+    document.removeEventListener('keydown', onKeyTheme);
+    if (focusBtn) themeMenuBtn.focus();
+  }
+  themeMenuBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    themeMenuList.classList.contains('open') ? closeThemeMenu(false) : openThemeMenu();
+  });
+  themeOptions().forEach(o => {
+    o.addEventListener('click', () => { applyTheme(o.dataset.theme); closeThemeMenu(true); });
   });
 
   /* ── Busca global ── */

@@ -59,12 +59,30 @@
   </ul>
 
   <div class="nav-controls">
-    <div id="themeControls" class="theme-controls" role="group" aria-label="Selecionar tema de cor">
-      <button class="theme-swatch" data-theme="verde-claro"  title="Creme (padrão)" aria-label="Tema Creme"></button>
-      <button class="theme-swatch" data-theme="verde-escuro" title="Sage"           aria-label="Tema Sage"></button>
-      <button class="theme-swatch" data-theme="redred"       title="REDRED"         aria-label="Tema REDRED"></button>
-      <button class="theme-swatch" data-theme="acai"         title="ACAI"           aria-label="Tema ACAI"></button>
-      <button class="theme-swatch" data-theme="tnt"          title="TNT"            aria-label="Tema TNT"></button>
+    <div id="themeMenu" class="theme-menu">
+      <button id="themeMenuBtn" class="theme-menu-btn" type="button"
+              aria-haspopup="menu" aria-expanded="false" aria-controls="themeMenuList"
+              title="Escolher modo (tema de cor)">
+        <span class="theme-menu-label">Modos</span>
+        <span class="theme-menu-chevron" aria-hidden="true">▾</span>
+      </button>
+      <div id="themeMenuList" class="theme-menu-list" role="menu" aria-label="Selecionar modo de cor">
+        <button class="theme-option" role="menuitemradio" aria-checked="false" data-theme="verde-claro"  type="button">
+          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">Claro</span><span class="theme-option-check" aria-hidden="true">✓</span>
+        </button>
+        <button class="theme-option" role="menuitemradio" aria-checked="false" data-theme="verde-escuro" type="button">
+          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">Escuro</span><span class="theme-option-check" aria-hidden="true">✓</span>
+        </button>
+        <button class="theme-option" role="menuitemradio" aria-checked="false" data-theme="redred"       type="button">
+          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">REDRED</span><span class="theme-option-check" aria-hidden="true">✓</span>
+        </button>
+        <button class="theme-option" role="menuitemradio" aria-checked="false" data-theme="acai"         type="button">
+          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">ACAI</span><span class="theme-option-check" aria-hidden="true">✓</span>
+        </button>
+        <button class="theme-option" role="menuitemradio" aria-checked="false" data-theme="tnt"          type="button">
+          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">TNT</span><span class="theme-option-check" aria-hidden="true">✓</span>
+        </button>
+      </div>
     </div>
     <button class="nav-search-btn" id="searchOpenBtn" title="Buscar" aria-label="Abrir busca">🔍</button>
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">☰</button>

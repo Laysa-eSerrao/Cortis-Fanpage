@@ -237,21 +237,62 @@ body {
 .nav-links { display: none; }
 .nav-controls { display: flex; align-items: center; gap: .5rem; }
 
-/* swatches de tema — cores fixas (é um seletor de temas, precisa mostrar cada cor) */
-.theme-controls { display: flex; align-items: center; gap: .35rem; }
-.theme-swatch {
-  width: 18px; height: 18px; border-radius: 50%;
-  border: 2px solid color-mix(in srgb, var(--text) 30%, transparent);
-  transition: transform .2s, border-color .2s;
-  padding: 0;
+/* seletor de modo (dropdown "Modos") — substitui os antigos swatches soltos */
+.theme-menu { position: relative; }
+.theme-menu-btn {
+  display: flex; align-items: center; gap: .4rem;
+  height: 36px; padding: 0 .8rem;
+  border: 1px solid var(--border-hover); border-radius: 999px;
+  background: var(--glass);
+  color: var(--text); font-size: .82rem; line-height: 1;
+  transition: border-color .3s, color .3s, background-color .3s;
 }
-.theme-swatch:hover { transform: scale(1.18); }
-.theme-swatch.active { border-color: var(--text); transform: scale(1.15); }
-.theme-swatch[data-theme="verde-escuro"] { background: linear-gradient(135deg, #0F241C, #A7EAE1); }
-.theme-swatch[data-theme="verde-claro"]  { background: linear-gradient(135deg, #EAF6F3, #2A5650); }
-.theme-swatch[data-theme="redred"]       { background: linear-gradient(135deg, #1A0708, #930C11); }
-.theme-swatch[data-theme="acai"]         { background: linear-gradient(135deg, #1C1220, #7DA641); }
-.theme-swatch[data-theme="tnt"]          { background: linear-gradient(135deg, #15191A, #930C11); }
+.theme-menu-btn:hover,
+.theme-menu-btn[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
+.theme-menu-label { letter-spacing: .02em; }
+.theme-menu-chevron { font-size: .7rem; transition: transform .25s ease; }
+.theme-menu-btn[aria-expanded="true"] .theme-menu-chevron { transform: rotate(180deg); }
+
+.theme-menu-list {
+  display: none;
+  position: absolute; top: calc(100% + .5rem); right: 0;
+  min-width: 168px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: .35rem;
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--text) 18%, transparent);
+  z-index: 50;
+}
+.theme-menu-list.open { display: block; animation: themeMenuIn .15s ease; }
+@keyframes themeMenuIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+.theme-option {
+  display: flex; align-items: center; gap: .6rem; width: 100%;
+  padding: .5rem .6rem; border-radius: 8px;
+  color: var(--text); font-size: .88rem; text-align: left;
+  transition: background-color .15s;
+}
+.theme-option:hover,
+.theme-option:focus-visible { background: var(--glass); }
+.theme-option.active { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.theme-option-name { flex: 1; }
+.theme-option-check { color: var(--accent); font-size: .85rem; opacity: 0; }
+.theme-option.active .theme-option-check { opacity: 1; }
+
+/* bolinhas de cor — fixas por tema (representam a cor de cada modo, independente do tema ativo) */
+.theme-dot {
+  width: 14px; height: 14px; border-radius: 50%; flex: 0 0 auto;
+  border: 1px solid color-mix(in srgb, var(--text) 22%, transparent);
+}
+.theme-option[data-theme="verde-claro"]  .theme-dot { background: #F1ECE5; border-color: #38302F; }
+.theme-option[data-theme="verde-escuro"] .theme-dot { background: #7A8E78; }
+.theme-option[data-theme="redred"]       .theme-dot { background: #930C11; }
+.theme-option[data-theme="acai"]         .theme-dot { background: #3A2135; } /* roxo do açaí (visual do swatch, não o accent do tema) */
+.theme-option[data-theme="tnt"]          .theme-dot { background: #4A5052; }
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-menu-list.open { animation: none; }
+  .theme-menu-chevron { transition: none; }
+}
 
 .nav-search-btn, .nav-toggle {
   width: 36px; height: 36px; border-radius: 50%;
@@ -713,6 +754,17 @@ body {
 .gemeo-card:hover { border-color: var(--border-hover); }
 .gemeo-pos { font-family: 'Anton', sans-serif; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); text-align: center; margin-bottom: .7rem; }
 .gemeo-photo { width: 100%; aspect-ratio: 1; object-fit: cover; background: var(--surface); margin-bottom: 1rem; }
+/* Moldura quadrada que recorta a foto: permite dar zoom (scale) na imagem sem vazar para fora do quadro nem sobre o rótulo/nome do card */
+.gemeo-photo-frame { width: 100%; aspect-ratio: 1; overflow: hidden; background: var(--surface); margin-bottom: 1rem; }
+.gemeo-photo-frame > .gemeo-photo { height: 100%; aspect-ratio: auto; margin-bottom: 0; display: block; }
+/* Centraliza o rosto do Seonghyeon dentro do quadro (só esta foto).
+   A foto é um retrato alto (rosto no terço superior); center 22% desce o enquadramento
+   para o rosto ficar centralizado e alinhado com o do Keonho na comparação. */
+.gemeo-photo--seonghyeon { object-position: center 22%; }
+/* Aproxima (zoom) o rosto do Keonho para ficar de tamanho comparável ao do Seonghyeon; recortado pela moldura acima.
+   object-position center 45% baixa levemente o recorte para centralizar o rosto e alinhar a linha
+   dos olhos com a da foto do Seonghyeon na comparação, mantendo respiro acima do cabelo e o queixo visível. */
+.gemeo-photo--keonho { transform: scale(1.2); object-position: center 45%; }
 .gemeo-name { font-family: 'Anton', sans-serif; font-size: 1.8rem; letter-spacing: .03em; color: var(--text); text-align: center; }
 .gemeo-sub { font-size: .74rem; color: var(--accent); letter-spacing: .08em; text-transform: uppercase; text-align: center; margin-bottom: 1rem; }
 .gemeo-traits { display: flex; flex-direction: column; gap: .55rem; padding: 0 1.2rem; }

@@ -34,18 +34,24 @@ Qualquer uma das opções:
 ## Os 5 temas
 
 Visual **vintage/Y2K**. O tema troca o site inteiro (fundo, superfícies, texto e accent) via classe no `<body>`.
-O seletor fica na navbar (os 5 swatches) e o tema é mantido **em memória** durante a navegação
-(sem `localStorage`). Tema padrão (carrega na primeira visita): **Creme**. Sage continua como tema secundário.
+O seletor fica na navbar num botão **"Modos"** (🎨 + chevron) que abre um dropdown com os 5 modos —
+**Claro · Escuro · REDRED · ACAI · TNT** —, cada um com uma bolinha da cor do tema e o modo ativo
+marcado com ✓. O dropdown fecha ao selecionar, ao clicar fora ou com **Escape**, é navegável por teclado
+(`aria-expanded`/setas) e respeita `prefers-reduced-motion`. O tema é mantido **em memória** durante a
+navegação (sem `localStorage`). Tema padrão (carrega na primeira visita): **Creme** (Claro). Sage (Escuro)
+continua como tema secundário.
 
-| Tema | Swatch (`data-theme`) | Classe no `<body>` | Fundo → Accent |
-|------|-----------------------|--------------------|----------------|
-| Creme *(padrão)* | `verde-claro` | `theme-green-light` | `#F1ECE5` → detalhe **`#38302F`** (realce sage) |
-| Sage vintage | `verde-escuro` | `theme-green-dark` | `#7A8E78` → detalhe **`#352D2E`** (cards sage escuros com texto creme `#F1ECE5`) |
-| REDRED | `redred` | `theme-redred` | `#930C11` |
-| ACAI | `acai` | `theme-acai` | `#7DA641` |
-| TNT | `tnt` | `theme-tnt` | `#4A5052` (detalhe vermelho no accent-2) |
+| Tema (nome no menu) | `data-theme` | Classe no `<body>` | Fundo → Accent | Bolinha no menu |
+|------|--------------|--------------------|----------------|-----------------|
+| Creme — **Claro** *(padrão)* | `verde-claro` | `theme-green-light` | `#F1ECE5` → detalhe **`#38302F`** (realce sage) | `#F1ECE5` (borda `#38302F`) |
+| Sage — **Escuro** | `verde-escuro` | `theme-green-dark` | `#7A8E78` → detalhe **`#352D2E`** (cards sage escuros com texto creme `#F1ECE5`) | `#7A8E78` |
+| **REDRED** | `redred` | `theme-redred` | `#930C11` | `#930C11` |
+| **ACAI** | `acai` | `theme-acai` | `#7DA641` | `#3A2135` (roxo) |
+| **TNT** | `tnt` | `theme-tnt` | `#4A5052` (detalhe vermelho no accent-2) | `#4A5052` |
 
 > Os nomes de classe (`theme-green-dark`/`theme-green-light`) foram mantidos por compatibilidade — hoje representam **sage** e **creme**, não mais verdes.
+>
+> A bolinha do **ACAI** no menu é **roxa** (`#3A2135`) só como identidade visual do modo; o *accent* interno do tema açaí continua **verde** (`#7DA641`).
 
 **Logo oficial** (PNGs em `assets/`): símbolo na **navbar** e no **hero** (acima do título), logo completa na **intro**. A cor da logo troca junto com o tema (versão `#38302F` no sage/creme; versões coloridas no REDRED/ACAI/TNT). Favicon: `assets/favicon-cortis.png`.
 
