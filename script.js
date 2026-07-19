@@ -273,6 +273,46 @@ const cortisBall = {
   ]
 };
 
+/* ── Lightstick oficial ── */
+const lightstick = {
+  fotos: [
+    { src: "assets/lightstick.jpg",     alt: "Lightstick oficial do CORTIS em detalhe — bastão fino e reto, corpo branco, com o nome CORTIS em preto na área central transparente e o botão liga/desliga perto da base" },
+    { src: "assets/lightstick-kit.jpg", alt: "Kit completo da lightstick do CORTIS — o que vem na caixa: o bastão, a embalagem, a bolsa de tecido, a alça de pulso, 5 photocards, adesivos e o manual" }
+  ],
+  intro: "A lightstick oficial do CORTIS foi lançada em <strong>julho de 2026</strong>, pouco antes da turnê <strong>PUT YOUR PHONE DOWN</strong>. Diferente das lightsticks tradicionais com esfera no topo, ela tem formato de um <strong>bastão fino e reto</strong>, corpo branco com uma área central transparente onde aparece o nome <strong>CORTIS</strong> em relevo, e o símbolo do grupo perto da base. Visual minimalista e industrial — lembra um marcador/caneta ou um tubo de luz.",
+  ficha: [
+    { k: "Nome",                 v: "CORTIS Official Light Stick" },
+    { k: "Tamanho",              v: "3,4 × 3,4 × 25,7 cm" },
+    { k: "Material",             v: "ABS e policarbonato" },
+    { k: "Alimentação",          v: "3 pilhas alcalinas AAA (não inclusas)" },
+    { k: "Fabricante",           v: "FANLIGHT (fabricada na Coreia do Sul)" },
+    { k: "Data de fabricação",   v: "Julho de 2026" },
+    { k: "Preço oficial global", v: "US$ 35,05 (Weverse, antes de frete/impostos)" },
+    { k: "Controle em shows",    v: "Operação sem fio (sincroniza a iluminação em shows compatíveis)" }
+  ],
+  caixa: [
+    "Lightstick",
+    "5 photocards (provavelmente um de cada integrante)",
+    "2 adesivos",
+    "Bolsa protetora de tecido",
+    "Alça de pulso",
+    "Manual",
+    "Embalagem oficial"
+  ],
+  caixaNota: "As pilhas (3× AAA) não acompanham a caixa.",
+  vendas: [
+    "Pré-venda online: começou em 13 de julho de 2026 pela Weverse Shop.",
+    "Venda presencial: nos shows da turnê, a partir de Incheon (18–19 de julho de 2026, Inspire Arena).",
+    "Rodadas adicionais de pré-venda foram abertas; os envios internacionais de uma das rodadas estão previstos para 16 de outubro de 2026.",
+    "Limite de 1 unidade por conta na rodada de pré-venda citada."
+  ],
+  // NOTA: significado do design é interpretação, não oficial.
+  interpLead: "A BigHit não publicou uma explicação oficial detalhada do design. A leitura abaixo é dos fãs.",
+  interpretacao: "O formato reto, sem a cúpula tradicional, combina com a identidade <strong>“Color Outside the Lines”</strong> — quase um instrumento para desenhar ou colorir, em vez do modelo comum de lightstick. O símbolo perto do botão remete ao logotipo abstrato do grupo, como uma mancha de tinta. Esta é uma interpretação visual, não uma explicação oficial da empresa.",
+  // TODO: cores/modos da lightstick sem fonte confirmada
+  nota: "Detalhes de cores e modos de uso serão confirmados quando o guia oficial completo for publicado."
+};
+
 /* ── Stream / plataformas ── */
 /* TODO: substituir pelas URLs OFICIAIS do CORTIS (por enquanto são buscas genéricas) */
 const streamLinks = [
@@ -322,6 +362,7 @@ const SECTIONS = [
   { title: "Galeria", anchor: "#galeria" },
   { title: "Os Gêmeos", anchor: "#gemeos" },
   { title: "Cortis Ball", anchor: "#cortisball" },
+  { title: "Lightstick", anchor: "#lightstick" },
   { title: "Stream", anchor: "#stream" },
   { title: "Novos COER", anchor: "#novos-coer" }
 ];
@@ -712,6 +753,43 @@ document.addEventListener('DOMContentLoaded', function () {
          </article>`).join('')}</div>`;
   }
 
+  /* ── Render: Lightstick ── */
+  function renderLightstick() {
+    const c = document.getElementById('lightstickContainer'); if (!c) return;
+    const fotos = lightstick.fotos.map(f =>
+      `<figure class="lightstick-photo"><img src="${esc(f.src)}" alt="${esc(f.alt)}" loading="lazy" onerror="this.closest('.lightstick-photo').style.display='none'"></figure>`).join('');
+    const ficha = lightstick.ficha.map(r =>
+      `<tr><th scope="row">${esc(r.k)}</th><td>${esc(r.v)}</td></tr>`).join('');
+    const caixa = lightstick.caixa.map(i => `<li>${esc(i)}</li>`).join('') +
+      `<li class="lightstick-list-note">${esc(lightstick.caixaNota)}</li>`;
+    const vendas = lightstick.vendas.map(v => `<li>${esc(v)}</li>`).join('');
+    // NOTA: significado do design é interpretação, não oficial (bloco .lightstick-interp)
+    c.innerHTML =
+      `<div class="lightstick-hero reveal">${fotos}</div>
+       <p class="lightstick-intro">${lightstick.intro}</p>
+       <div class="lightstick-cols reveal">
+         <div class="lightstick-block">
+           <h3 class="lightstick-h3">Ficha técnica</h3>
+           <table class="lightstick-spec"><tbody>${ficha}</tbody></table>
+         </div>
+         <div class="lightstick-block">
+           <h3 class="lightstick-h3">O que vem na caixa</h3>
+           <ul class="lightstick-list">${caixa}</ul>
+         </div>
+       </div>
+       <div class="lightstick-interp reveal">
+         <span class="lightstick-interp-label">Leitura dos fãs · interpretação (não oficial)</span>
+         <p class="lightstick-interp-lead">${esc(lightstick.interpLead)}</p>
+         <p>${lightstick.interpretacao}</p>
+       </div>
+       <div class="lightstick-block reveal" style="margin-bottom:1.4rem">
+         <h3 class="lightstick-h3">Vendas</h3>
+         <ul class="lightstick-list">${vendas}</ul>
+       </div>
+       <p class="lightstick-note">${esc(lightstick.nota)}</p>`;
+    // TODO: cores/modos da lightstick sem fonte confirmada
+  }
+
   /* ── Render: Stream ── */
   function renderStream() {
     const c = document.getElementById('streamGrid'); if (!c) return;
@@ -984,6 +1062,7 @@ document.addEventListener('DOMContentLoaded', function () {
   renderGallery();
   renderGemeos();
   renderCortisBall();
+  renderLightstick();
   renderStream();
   renderCoer();
   applyTheme('verde-claro');

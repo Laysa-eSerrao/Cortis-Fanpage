@@ -802,6 +802,51 @@ body {
 .cortisball-member { font-size: .74rem; color: var(--accent); margin-top: .2rem; }
 
 /* ============================================================
+   LIGHTSTICK
+   Usa os tokens de superfície (--stext/--stext2/--saccent/--card) p/ adaptar aos 5 temas.
+   Contrato JS: .lightstick-hero > figure.lightstick-photo(img) ×2
+     + .lightstick-intro + .lightstick-cols > .lightstick-block(.lightstick-h3 + table.lightstick-spec | ul.lightstick-list)
+     + .lightstick-interp (bloco de INTERPRETAÇÃO, não oficial) + .lightstick-note
+   ============================================================ */
+.lightstick-hero { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.8rem; }
+.lightstick-photo { margin: 0; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--card); }
+.lightstick-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; display: block; padding: .5rem; }
+.lightstick-intro { max-width: 760px; margin: 0 auto 2rem; text-align: center; font-size: .92rem; color: var(--stext2); line-height: 1.85; }
+.lightstick-intro strong { color: var(--stext); }
+
+.lightstick-cols { display: grid; grid-template-columns: 1fr; gap: 1.2rem; margin-bottom: 1.6rem; }
+.lightstick-block { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.4rem; }
+.lightstick-h3 { font-family: 'Anton', sans-serif; font-size: 1.1rem; letter-spacing: .04em; color: var(--saccent); margin-bottom: .9rem; }
+
+.lightstick-spec { width: 100%; border-collapse: collapse; }
+.lightstick-spec th, .lightstick-spec td {
+  padding: .5rem .6rem .5rem 0; vertical-align: top; text-align: left;
+  border-bottom: 1px solid color-mix(in srgb, var(--stext) 13%, transparent);
+}
+.lightstick-spec th { font-size: .74rem; font-weight: 500; color: var(--stext2); white-space: nowrap; }
+.lightstick-spec td { font-size: .84rem; color: var(--stext); line-height: 1.5; }
+.lightstick-spec tr:last-child th, .lightstick-spec tr:last-child td { border-bottom: 0; }
+
+.lightstick-list { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+.lightstick-list li { position: relative; padding-left: 1.2rem; font-size: .86rem; color: var(--stext); line-height: 1.55; }
+.lightstick-list li::before { content: "›"; position: absolute; left: 0; color: var(--saccent); font-weight: 700; }
+.lightstick-list li.lightstick-list-note { padding-left: 0; margin-top: .3rem; font-size: .78rem; color: var(--stext2); }
+.lightstick-list li.lightstick-list-note::before { content: none; }
+
+/* Bloco de INTERPRETAÇÃO (leitura dos fãs) — visualmente diferenciado; não é explicação oficial */
+.lightstick-interp { border: 1px dashed var(--border-hover); background: var(--glass); border-radius: 16px; padding: 1.3rem 1.4rem; margin-bottom: 1.6rem; }
+.lightstick-interp-label { display: inline-block; font-family: 'Anton', sans-serif; font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--saccent); border: 1px solid var(--border-hover); border-radius: 999px; padding: .22rem .65rem; margin-bottom: .8rem; }
+.lightstick-interp-lead { font-size: .78rem; color: var(--stext2); margin-bottom: .5rem; }
+.lightstick-interp p:last-child { font-size: .86rem; color: var(--stext); line-height: 1.75; }
+.lightstick-interp strong { color: var(--saccent); }
+.lightstick-note { font-size: .78rem; color: var(--stext2); opacity: .9; text-align: center; margin-top: .2rem; }
+
+@media (min-width: 768px) {
+  .lightstick-hero { grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+  .lightstick-cols { grid-template-columns: 1fr 1fr; gap: 1.6rem; align-items: start; }
+}
+
+/* ============================================================
    STREAM
    Contrato JS: .stream-grid > (a.stream-card[style="--card-color:…"] > .stream-icon + .stream-name + .stream-action)
    ============================================================ */
