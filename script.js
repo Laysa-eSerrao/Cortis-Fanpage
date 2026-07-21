@@ -270,8 +270,8 @@ const cortisBall = {
 /* ── Lightstick oficial ── */
 const lightstick = {
   fotos: [
-    { src: "assets/lightstick.jpg",     alt: "Lightstick oficial do CORTIS em detalhe — bastão fino e reto, corpo branco, com o nome CORTIS em preto na área central transparente e o botão liga/desliga perto da base" },
-    { src: "assets/lightstick-kit.jpg", alt: "Kit completo da lightstick do CORTIS — o que vem na caixa: o bastão, a embalagem, a bolsa de tecido, a alça de pulso, 5 photocards, adesivos e o manual" }
+    { src: "assets/lightstick.webp",    alt: "Lightstick oficial do CORTIS em detalhe — bastão fino e reto, corpo branco, com o nome CORTIS em preto na área central transparente e o botão liga/desliga perto da base" },
+    { src: "assets/lightstick-kit.webp", alt: "Kit completo da lightstick do CORTIS — o que vem na caixa: o bastão, a embalagem, a bolsa de tecido, a alça de pulso, 5 photocards, adesivos e o manual" }
   ],
   intro: "A lightstick oficial do CORTIS foi lançada em <strong>julho de 2026</strong>, pouco antes da turnê <strong>PUT YOUR PHONE DOWN</strong>. Diferente das lightsticks tradicionais com esfera no topo, ela tem formato de um <strong>bastão fino e reto</strong>, corpo branco com uma área central transparente onde aparece o nome <strong>CORTIS</strong> em relevo, e o símbolo do grupo perto da base. Visual minimalista e industrial — lembra um marcador/caneta ou um tubo de luz."
 };
