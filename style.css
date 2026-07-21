@@ -850,7 +850,8 @@ body {
    STREAM
    Contrato JS: .stream-grid > (a.stream-card[style="--card-color:…"] > .stream-icon + .stream-name + .stream-action)
    ============================================================ */
-.stream-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 900px; margin: 0 auto; }
+/* 3 plataformas (Spotify · YouTube · Apple Music) → linha centralizada de 3 */
+.stream-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 720px; margin: 0 auto; }
 .stream-card {
   display: flex; flex-direction: column; align-items: center; gap: .7rem;
   padding: 1.8rem 1rem; text-align: center;
@@ -861,8 +862,15 @@ body {
   border-color: var(--card-color, var(--border-hover));
   box-shadow: 0 8px 30px color-mix(in srgb, var(--card-color, var(--accent)) 30%, transparent);
 }
-.stream-icon { font-size: 1.9rem; line-height: 1; }
-.stream-icon img { width: 34px; height: 34px; object-fit: contain; display: block; }
+.stream-icon { font-size: 1.9rem; line-height: 1; display: flex; align-items: center; justify-content: center; }
+/* Ícones SVG monocromáticos das plataformas — tamanho consistente ~44px */
+.stream-icon img { width: 44px; height: 44px; object-fit: contain; display: block; }
+/* Os SVGs são pretos por padrão (ótimo sobre os cards claros do tema Creme);
+   nos temas de fundo escuro invertemos para branco e garantimos bom contraste. */
+.theme-green-dark .stream-icon img,
+.theme-redred    .stream-icon img,
+.theme-acai      .stream-icon img,
+.theme-tnt       .stream-icon img { filter: invert(1) brightness(1.9); }
 .stream-name { font-size: .88rem; font-weight: 600; color: var(--text); }
 .stream-action { font-size: .74rem; color: var(--accent); }
 
@@ -1004,7 +1012,6 @@ body {
   .historia-container { grid-template-columns: repeat(2, 1fr); }
   .new-coer-grid { grid-template-columns: repeat(2, 1fr); }
   .cortisball-grid { grid-template-columns: repeat(3, 1fr); }
-  .stream-grid { grid-template-columns: repeat(3, 1fr); }
   .gallery-masonry { columns: 3; }
   .stat-item { flex: 1 1 0; }
 }
@@ -1055,7 +1062,6 @@ body {
   .historia-container { grid-template-columns: repeat(3, 1fr); }
   .new-coer-grid { grid-template-columns: repeat(3, 1fr); }
   .cortisball-grid { grid-template-columns: repeat(5, 1fr); }
-  .stream-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 /* ============================================================
@@ -1210,4 +1216,69 @@ body {
   background: none;
   -webkit-text-fill-color: var(--accent);
   color: var(--accent);
+}
+
+/* ============================================================
+   OTIMIZAÇÃO MOBILE (≤ 768px)
+   Ajustes só para telas estreitas — o layout desktop fica intacto.
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* ── HERO (versão B): sem foto de grupo, só o fundo liso do tema ──
+     A foto e o scrim saem no mobile para o título/logo aparecerem
+     com contraste total sobre o fundo (creme) + gradiente do tema. */
+  .hero-photo,
+  .hero-scrim { display: none !important; }
+
+  /* Título com respiro nas laterais (não encosta nas bordas) */
+  .hero-title { font-size: clamp(3.25rem, 19vw, 5.5rem); }
+
+  /* Nomes dos membros: quebram em ~2 linhas em vez de uma linha apertada */
+  .hero-members {
+    font-size: .78rem;
+    gap: .35rem .5rem;
+    max-width: 260px;
+    margin-left: auto; margin-right: auto;
+  }
+
+  /* Botões empilhados, largura ~total e boa área de toque (≥ ~48px) */
+  .hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .7rem;
+    width: min(320px, 100%);
+    margin-left: auto; margin-right: auto;
+  }
+  .hero-btns .btn {
+    width: 100%;
+    text-align: center;
+    padding: .95rem 1.5rem;
+  }
+
+  /* ── NAVBAR: alvos de toque maiores (≥ ~42px) ── */
+  .nav-search-btn,
+  .nav-toggle { width: 42px; height: 42px; }
+  .theme-menu-btn { height: 40px; }
+
+  /* ── MODAL DE MEMBRO: empilhado, com o lado-info rolando sozinho ──
+     No desktop é grid 2 colunas (info rola sozinho). Empilhado no mobile a
+     altura estourava e o overflow:hidden da caixa cortava a bio. Fixamos a
+     foto e a área de info em frações de vh (somam ≤ 88vh) para o botão de
+     fechar continuar visível no topo e a bio rolar dentro do próprio bloco. */
+  .modal-img-side { min-height: 200px; max-height: 40vh; }
+  .modal-info-side {
+    max-height: 48vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1.6rem 1.4rem;
+  }
+
+  /* ── STREAM: trio de ícones centralizado, com respiro no toque ── */
+  .stream-grid { gap: .6rem; }
+  .stream-card { padding: 1.3rem .5rem; }
+  .stream-name { font-size: .82rem; }
+
+  /* ── FOOTER: mais área de toque nos links ── */
+  .footer-links { gap: .6rem 1.1rem; }
+  .footer-links a { padding: .35rem .2rem; }
 }

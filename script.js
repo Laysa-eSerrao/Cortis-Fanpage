@@ -28,7 +28,7 @@ const membros = [
     height: "190,5 cm",
     img: "assets/martin.jpg",
     tags: ["Líder"],
-    bio: "Líder do CORTIS e um dos cérebros criativos do grupo. É coreano-canadense. Antes mesmo da estreia, já aparecia como <strong>um dos colaboradores creditados</strong> na criação de músicas de outros artistas da HYBE, como “Magnetic” (ILLIT); “Deja Vu”, “Miracle” e “Beautiful Strangers” (TXT); “Pierrot” (LE SSERAFIM); e “Outside” (ENHYPEN).",
+    bio: "Líder do CORTIS e um dos cérebros criativos do grupo. É coreano-canadense. Antes mesmo da estreia, já aparecia como <strong>um dos colaboradores creditados</strong> na criação de músicas de outros artistas da HYBE (lista completa nos fatos abaixo).",
     facts: [
       "Líder do CORTIS.",
       "Nome coreano: <strong>Park Woo-joo</strong> (박우주).",
@@ -147,21 +147,15 @@ const historia = [
   { title: "Revelação", text: "Antes chamado informalmente de <strong>BIGHITNBG</strong> (BigHit New Boy Group), o grupo foi revelado em abril de 2025; os membros em <strong>14 de julho</strong> e o nome em <strong>7 de agosto de 2025</strong>." },
   { title: "Direção criativa", text: "A direção criativa e o estilo ficam com <strong>Seoyoung Kim</strong> e <strong>Actoy</strong>, com estética <strong>punk + Y2K</strong>." },
   { title: "OT5", text: "São cinco membros: <strong>Martin</strong> (líder), <strong>James</strong> (o mais velho), <strong>Juhoon</strong>, <strong>Seonghyeon</strong> e <strong>Keonho</strong> (o mais novo)." },
-  { title: "Fandom: COER", text: "O fandom se chama <strong>COER (코어)</strong> — junção de <strong>“COR”</strong> (de CORTIS) + <strong>“~ER”</strong> (os que ficam juntos), ecoando <em>“CORE”</em> (núcleo): os fãs como força central. Escolhido entre mais de 19 mil sugestões; a membership global abriu em 05/03/2026 (200 dias de estreia)." }, // CONFIRMAR: fonte de fã, validar
-  { title: "1ª turnê", text: "Em 2026 o grupo anunciou a <strong>CORTIS TOUR — PUT YOUR PHONE DOWN</strong>, com etapas na Coreia, América do Norte e Japão (PIA Arena MM, Kanagawa, em 4–6 de setembro). O nome é um convite para viver o show no presente, sem telas." }
+  { title: "Fandom: COER", text: "O fandom se chama <strong>COER (코어)</strong> — junção de <strong>“COR”</strong> (de CORTIS) + <strong>“~ER”</strong> (os que ficam juntos), ecoando <em>“CORE”</em> (núcleo): os fãs como força central. Escolhido entre mais de 19 mil sugestões; a membership global abriu em 05/03/2026 (200 dias de estreia)." } // CONFIRMAR: fonte de fã, validar
 ];
 
 /* ── Curiosidades ── */
 const curiosidades = [
-  { tag: "O nome", text: "<strong>CORTIS</strong> é o acrônimo de <strong>COLOR OUTSIDE THE LINES</strong> — as seis letras foram tiradas aleatoriamente da frase, que significa “pensar livremente e romper os padrões do mundo”." },
   { tag: "Estreia", text: "O grupo estreou em <strong>18/08/2025</strong> com o single <em>What You Want</em>, precedido pelo pré-single <em>GO!</em> (11/08/2025)." },
-  { tag: "3º da BigHit", text: "O CORTIS é o <strong>3º grupo da BigHit Music</strong> (depois de BTS e TXT) e o 1º boy group do selo em cerca de 6 anos." },
-  { tag: "300+ músicas", text: "Como uma “young creator crew”, os membros prepararam <strong>mais de 300 músicas</strong> em cerca de 2 anos — todos com créditos no projeto de estreia." },
   { tag: "Billboard", text: "O 1º EP <strong>COLOR OUTSIDE THE LINES</strong> estreou em <strong>#15 na Billboard 200</strong>; o 2º EP <strong>GREENGREEN</strong> subiu para <strong>#3</strong>." },
   { tag: "GREENGREEN", text: "O EP <strong>GREENGREEN</strong> vendeu <strong>+1,1 milhão de cópias no 1º dia</strong> de lançamento." },
   { tag: "Streams", text: "“GO!”, “What You Want” e “FaSHioN” passaram de <strong>400 milhões de streams</strong> no Spotify em 5 meses." },
-  { tag: "Prêmios", text: "Até 16/07/2026, o CORTIS soma <strong>22 troféus</strong>: <strong>11 vitórias</strong> de “REDRED” em programas musicais (com <strong>grand slam</strong> nos 5 principais) + <strong>11 prêmios</strong> em cerimônias. Veja a lista completa na seção Prêmios." },
-  { tag: "2 milhões", text: "Em março de 2026, o primeiro EP foi certificado em <strong>2 milhões de cópias</strong>." },
   { tag: "Grupo internacional", text: "<strong>Martin</strong> é coreano-canadense e <strong>James</strong> é tailandês-taiwanês (nasceu em Hong Kong, cresceu em Taipei) e fala 5 línguas." },
   { tag: "Do esporte ao palco", text: "<strong>Keonho</strong>, o maknae, foi <strong>nadador competitivo</strong> antes de se tornar idol." },
   { tag: "Os “gêmeos”", text: "Os fãs costumam confundir os maknaes <strong>Seonghyeon</strong> e <strong>Keonho</strong> — por isso esta fanpage tem uma seção só para diferenciá-los." },
@@ -279,47 +273,17 @@ const lightstick = {
     { src: "assets/lightstick.jpg",     alt: "Lightstick oficial do CORTIS em detalhe — bastão fino e reto, corpo branco, com o nome CORTIS em preto na área central transparente e o botão liga/desliga perto da base" },
     { src: "assets/lightstick-kit.jpg", alt: "Kit completo da lightstick do CORTIS — o que vem na caixa: o bastão, a embalagem, a bolsa de tecido, a alça de pulso, 5 photocards, adesivos e o manual" }
   ],
-  intro: "A lightstick oficial do CORTIS foi lançada em <strong>julho de 2026</strong>, pouco antes da turnê <strong>PUT YOUR PHONE DOWN</strong>. Diferente das lightsticks tradicionais com esfera no topo, ela tem formato de um <strong>bastão fino e reto</strong>, corpo branco com uma área central transparente onde aparece o nome <strong>CORTIS</strong> em relevo, e o símbolo do grupo perto da base. Visual minimalista e industrial — lembra um marcador/caneta ou um tubo de luz.",
-  ficha: [
-    { k: "Nome",                 v: "CORTIS Official Light Stick" },
-    { k: "Tamanho",              v: "3,4 × 3,4 × 25,7 cm" },
-    { k: "Material",             v: "ABS e policarbonato" },
-    { k: "Alimentação",          v: "3 pilhas alcalinas AAA (não inclusas)" },
-    { k: "Fabricante",           v: "FANLIGHT (fabricada na Coreia do Sul)" },
-    { k: "Data de fabricação",   v: "Julho de 2026" },
-    { k: "Preço oficial global", v: "US$ 35,05 (Weverse, antes de frete/impostos)" },
-    { k: "Controle em shows",    v: "Operação sem fio (sincroniza a iluminação em shows compatíveis)" }
-  ],
-  caixa: [
-    "Lightstick",
-    "5 photocards (provavelmente um de cada integrante)",
-    "2 adesivos",
-    "Bolsa protetora de tecido",
-    "Alça de pulso",
-    "Manual",
-    "Embalagem oficial"
-  ],
-  caixaNota: "As pilhas (3× AAA) não acompanham a caixa.",
-  vendas: [
-    "Pré-venda online: começou em 13 de julho de 2026 pela Weverse Shop.",
-    "Venda presencial: nos shows da turnê, a partir de Incheon (18–19 de julho de 2026, Inspire Arena).",
-    "Rodadas adicionais de pré-venda foram abertas; os envios internacionais de uma das rodadas estão previstos para 16 de outubro de 2026.",
-    "Limite de 1 unidade por conta na rodada de pré-venda citada."
-  ],
-  // NOTA: significado do design é interpretação, não oficial.
-  interpLead: "A BigHit não publicou uma explicação oficial detalhada do design. A leitura abaixo é dos fãs.",
-  interpretacao: "O formato reto, sem a cúpula tradicional, combina com a identidade <strong>“Color Outside the Lines”</strong> — quase um instrumento para desenhar ou colorir, em vez do modelo comum de lightstick. O símbolo perto do botão remete ao logotipo abstrato do grupo, como uma mancha de tinta. Esta é uma interpretação visual, não uma explicação oficial da empresa.",
-  // TODO: cores/modos da lightstick sem fonte confirmada
-  nota: "Detalhes de cores e modos de uso serão confirmados quando o guia oficial completo for publicado."
+  intro: "A lightstick oficial do CORTIS foi lançada em <strong>julho de 2026</strong>, pouco antes da turnê <strong>PUT YOUR PHONE DOWN</strong>. Diferente das lightsticks tradicionais com esfera no topo, ela tem formato de um <strong>bastão fino e reto</strong>, corpo branco com uma área central transparente onde aparece o nome <strong>CORTIS</strong> em relevo, e o símbolo do grupo perto da base. Visual minimalista e industrial — lembra um marcador/caneta ou um tubo de luz."
 };
 
-/* ── Stream / plataformas ── */
-/* TODO: substituir pelas URLs OFICIAIS do CORTIS (por enquanto são buscas genéricas) */
+/* ── Stream / plataformas (3 oficiais: Spotify, YouTube, Apple Music) ── */
 const streamLinks = [
-  { name: "Spotify", action: "Ouvir", icon: "🎧", color: "#1ED760", url: "https://open.spotify.com/search/CORTIS" },
-  { name: "Apple Music", action: "Ouvir", icon: "🍎", color: "#FA243C", url: "https://music.apple.com/search?term=CORTIS" },
-  { name: "YouTube", action: "Assistir", icon: "▶️", color: "#FF0000", url: "https://www.youtube.com/results?search_query=CORTIS+kpop" },
-  { name: "Melon", action: "Ouvir", icon: "🍈", color: "#00CD3C", url: "https://www.melon.com/search/total/index.htm?q=CORTIS" }
+  // TODO: colar link oficial verificado do perfil do Spotify (por ora, busca genérica)
+  { name: "Spotify", action: "Ouvir", icon: "assets/icon-spotify.svg", color: "#1ED760", url: "https://open.spotify.com/search/CORTIS" },
+  // YouTube: canal oficial confirmado
+  { name: "YouTube", action: "Assistir", icon: "assets/icon-youtube.svg", color: "#FF0000", url: "https://www.youtube.com/channel/UCZMYvSPulDSUdx7bdtTFdrg" },
+  // TODO: colar link oficial verificado do perfil do Apple Music (por ora, busca genérica)
+  { name: "Apple Music", action: "Ouvir", icon: "assets/icon-applemusic.svg", color: "#FA243C", url: "https://music.apple.com/search?term=CORTIS" }
 ];
 
 /* ── Guia para novos COER ── */
@@ -753,48 +717,21 @@ document.addEventListener('DOMContentLoaded', function () {
          </article>`).join('')}</div>`;
   }
 
-  /* ── Render: Lightstick ── */
+  /* ── Render: Lightstick (enxuto — só texto de abertura + as duas fotos) ── */
   function renderLightstick() {
     const c = document.getElementById('lightstickContainer'); if (!c) return;
     const fotos = lightstick.fotos.map(f =>
       `<figure class="lightstick-photo"><img src="${esc(f.src)}" alt="${esc(f.alt)}" loading="lazy" onerror="this.closest('.lightstick-photo').style.display='none'"></figure>`).join('');
-    const ficha = lightstick.ficha.map(r =>
-      `<tr><th scope="row">${esc(r.k)}</th><td>${esc(r.v)}</td></tr>`).join('');
-    const caixa = lightstick.caixa.map(i => `<li>${esc(i)}</li>`).join('') +
-      `<li class="lightstick-list-note">${esc(lightstick.caixaNota)}</li>`;
-    const vendas = lightstick.vendas.map(v => `<li>${esc(v)}</li>`).join('');
-    // NOTA: significado do design é interpretação, não oficial (bloco .lightstick-interp)
     c.innerHTML =
-      `<div class="lightstick-hero reveal">${fotos}</div>
-       <p class="lightstick-intro">${lightstick.intro}</p>
-       <div class="lightstick-cols reveal">
-         <div class="lightstick-block">
-           <h3 class="lightstick-h3">Ficha técnica</h3>
-           <table class="lightstick-spec"><tbody>${ficha}</tbody></table>
-         </div>
-         <div class="lightstick-block">
-           <h3 class="lightstick-h3">O que vem na caixa</h3>
-           <ul class="lightstick-list">${caixa}</ul>
-         </div>
-       </div>
-       <div class="lightstick-interp reveal">
-         <span class="lightstick-interp-label">Leitura dos fãs · interpretação (não oficial)</span>
-         <p class="lightstick-interp-lead">${esc(lightstick.interpLead)}</p>
-         <p>${lightstick.interpretacao}</p>
-       </div>
-       <div class="lightstick-block reveal" style="margin-bottom:1.4rem">
-         <h3 class="lightstick-h3">Vendas</h3>
-         <ul class="lightstick-list">${vendas}</ul>
-       </div>
-       <p class="lightstick-note">${esc(lightstick.nota)}</p>`;
-    // TODO: cores/modos da lightstick sem fonte confirmada
+      `<p class="lightstick-intro">${lightstick.intro}</p>
+       <div class="lightstick-hero reveal">${fotos}</div>`;
   }
 
-  /* ── Render: Stream ── */
+  /* ── Render: Stream (ícones SVG, link em nova aba) ── */
   function renderStream() {
     const c = document.getElementById('streamGrid'); if (!c) return;
     c.innerHTML = streamLinks.map(s =>
-      `<a class="stream-card reveal" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer" style="--card-color:${esc(s.color)}"><div class="stream-icon">${s.icon}</div><div class="stream-name">${esc(s.name)}</div><div class="stream-action">${esc(s.action)}</div></a>`
+      `<a class="stream-card reveal" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer" style="--card-color:${esc(s.color)}" aria-label="${esc(s.action)} no ${esc(s.name)}"><div class="stream-icon"><img src="${esc(s.icon)}" alt="" loading="lazy"></div><div class="stream-name">${esc(s.name)}</div><div class="stream-action">${esc(s.action)}</div></a>`
     ).join('');
   }
 
