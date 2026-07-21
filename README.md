@@ -74,33 +74,13 @@ Acessibilidade: `:focus-visible` visível em todos os temas, `prefers-reduced-mo
 
 ## Lightstick
 
-Seção **Lightstick** (`#lightstick`, entre *Cortis Ball* e *Novos COER* no menu — navbar e drawer). Versão **enxuta**: traz apenas o **texto de abertura** descrevendo a lightstick oficial (lançada em **julho de 2026**, formato de **bastão fino e reto**, corpo branco com "CORTIS" na área transparente) e as **duas fotos** (`assets/lightstick.jpg` = bastão, `assets/lightstick-kit.jpg` = kit, ambas `loading="lazy"` com `alt` descritivo). Conteúdo no objeto `lightstick` (`fotos` + `intro`) em [script.js](script.js), renderizado por `renderLightstick()`, adaptado aos 5 temas pelos tokens de superfície.
+Seção **Lightstick** (`#lightstick`, entre *Cortis Ball* e *Novos COER* no menu — navbar e drawer). Versão **enxuta**: traz apenas o **texto de abertura** descrevendo a lightstick oficial (lançada em **julho de 2026**, formato de **bastão fino e reto**, corpo branco com "CORTIS" na área transparente) e as **duas fotos** (`assets/lightstick.webp` = bastão, `assets/lightstick-kit.webp` = kit, ambas `loading="lazy"` com `alt` descritivo). Conteúdo no objeto `lightstick` (`fotos` + `intro`) em [script.js](script.js), renderizado por `renderLightstick()`, adaptado aos 5 temas pelos tokens de superfície.
 
 > Blocos de ficha técnica, "o que vem na caixa", vendas e a leitura de fãs sobre o design foram **removidos** para deixar a seção enxuta.
 
 ## Stream
 
 Seção **Stream** (`#stream`, logo antes do rodapé). Três plataformas com **ícones SVG** clicáveis (`assets/icon-spotify.svg`, `assets/icon-youtube.svg`, `assets/icon-applemusic.svg`), cada um em `<a target="_blank" rel="noopener noreferrer">` com `aria-label` (ex.: "Ouvir no Spotify"). Ícones monocromáticos ~44px: pretos sobre o tema Creme e invertidos para claro nos temas de fundo escuro (bom contraste nos 5 temas). **Melon foi removido.** O **YouTube** aponta para o canal oficial confirmado; **Spotify** e **Apple Music** ainda usam link de busca (`// TODO: colar link oficial verificado`).
-
----
-
-## TODOs pendentes
-
-O que ainda **falta preencher** hoje em [script.js](script.js) (só o que está de fato pendente):
-
-> **Imagens:** todas as fotos reais já foram inseridas (membros, gêmeos com legendas de posição, capas da discografia, as 4 Cortis Balls, galeria e foto de grupo no hero — que aparece só no desktop, ver "Responsivo"). Continua pendente apenas o `og:image` oficial no `<head>` (ver "Links oficiais").
-
-### Timeline (pré-debut)
-- **Formação** — data do anúncio oficial da formação do grupo
-
-### História
-- Dados de fonte de fã do **COER** (significado e membership) — ver `// CONFIRMAR` abaixo
-
-### Links oficiais
-- URLs de streaming (`streamLinks[].url`) — **YouTube** já usa o canal oficial confirmado; **Spotify** e **Apple Music** ainda são buscas genéricas (`// TODO: colar link oficial verificado`)
-- Links do rodapé em [index.html](index.html) — os `href="#"` ainda são placeholders
-- Guia "Como apoiar" — confirmar os canais oficiais do grupo
-- `og:image` no `<head>` de [index.html](index.html) — falta uma imagem oficial (o `og:url` já aponta para o GitHub Pages)
 
 ---
 
