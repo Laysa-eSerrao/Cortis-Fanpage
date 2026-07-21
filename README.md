@@ -16,7 +16,7 @@ os "gêmeos" Seonghyeon e Keonho, a Cortis Ball, a **lightstick oficial** e um g
 - **Fontes:** Google Fonts — *Anton* (display) + *Inter* (texto)
 - **Hospedagem:** GitHub Pages
 
-Sem etapa de build: é só abrir os arquivos.
+Site estático puro, sem etapa de build e sem dependências.
 
 ## Responsivo (mobile)
 
@@ -28,19 +28,6 @@ Layout **mobile-first** com breakpoints em **600px**, **768px** e **1024px**. Te
 - **Modais:** o modal de membro empilha foto + info no mobile com a **bio rolando dentro do bloco** (botão de fechar fica fixo no topo); modal de álbum e busca com listas roláveis.
 - **Navegação no mobile:** menu **hambúrguer** (drawer com todos os itens, incl. Lightstick e Stream) até 1024px; o seletor **"Modos"** e a **busca** ficam visíveis no topo.
 - Sem **scroll horizontal** na página; alvos de toque ampliados no topo/rodapé; respeita `prefers-reduced-motion`.
-
-## Como rodar localmente
-
-Qualquer uma das opções:
-
-- **VS Code + Live Server:** botão direito em `index.html` → **"Open with Live Server"**.
-- **Python** (sem instalar nada):
-  ```bash
-  cd "Cortis Fanpage"
-  python3 -m http.server 8000
-  ```
-  Depois acesse **http://localhost:8000**.
-- **Direto:** dar duplo-clique em `index.html` (abre via `file://`).
 
 ## Os 5 temas
 
