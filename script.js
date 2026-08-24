@@ -9,10 +9,12 @@
 const esc = s => String(s == null ? '' : s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const ytSearch = t => 'https://www.youtube.com/results?search_query=' + encodeURIComponent('CORTIS ' + t);
+/* Ícone do sprite SVG inline definido no topo do <body> (index.html) */
+const svgIcon = (name, cls) => `<svg class="icon${cls ? ' ' + cls : ''}" aria-hidden="true"><use href="#i-${name}"></use></svg>`;
 const fallbackBox = (letter, big) =>
   `<div class="media-fallback" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:${big ? '3rem' : '2rem'};color:var(--saccent);opacity:.4;background:var(--surface)">${esc(letter)}</div>`;
 const mvFallbackThumb = t =>
-  `<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;background:var(--surface)"><span style="font-size:1.6rem;color:var(--saccent)">▶</span><span style="font-family:'Anton',sans-serif;font-size:.85rem;letter-spacing:.04em;color:var(--stext2);text-align:center;padding:0 .5rem">${esc(t)}</span></div>`;
+  `<div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;background:var(--surface)"><span class="mv-fallback-play" style="color:var(--saccent)">${svgIcon('play', 'icon-lg')}</span><span style="font-family:'Anton',sans-serif;font-size:.85rem;letter-spacing:.04em;color:var(--stext2);text-align:center;padding:0 .5rem">${esc(t)}</span></div>`;
 
 /* ============================================================
    DADOS
@@ -288,13 +290,13 @@ const streamLinks = [
 
 /* ── Guia para novos COER ── */
 const guiaNovosCoer = [
-  { icon: "▶️", title: "Por onde começar", text: "Comece pelo single de estreia <strong>What You Want</strong> e pelo EP <strong>COLOR OUTSIDE THE LINES</strong> (2025). Depois explore a era <strong>GREENGREEN</strong> (2026)." },
-  { icon: "🌍", title: "Sobre o grupo", text: "O <strong>CORTIS</strong> é um grupo da <strong>BigHit Music (HYBE)</strong>, estreado em <strong>2025</strong>, com 5 membros — o 3º grupo do selo, depois de BTS e TXT. O nome significa <strong>COLOR OUTSIDE THE LINES</strong>." },
-  { icon: "👥", title: "Os membros", text: "<strong>Martin</strong> (líder, produtor)<br><strong>James</strong> (o mais velho, coreógrafo)<br><strong>Juhoon</strong> (dançarino)<br><strong>Seonghyeon</strong> (maknae)<br><strong>Keonho</strong> (maknae, o mais novo)" },
-  { icon: "💿", title: "Discografia rápida", text: "<strong>2025:</strong> GO! · What You Want · FaSHioN · COLOR OUTSIDE THE LINES (1º EP)<br><strong>2026:</strong> GREENGREEN (2º EP · faixa-título REDRED; inclui TNT e ACAI) · Mention Me (OST)" },
-  { icon: "🤝", title: "Como apoiar", text: "Faça <strong>streaming</strong> nas plataformas, assista aos MVs no YouTube e acompanhe o grupo nas redes oficiais. // TODO: confirmar canais oficiais." },
+  { icon: "play", title: "Por onde começar", text: "Comece pelo single de estreia <strong>What You Want</strong> e pelo EP <strong>COLOR OUTSIDE THE LINES</strong> (2025). Depois explore a era <strong>GREENGREEN</strong> (2026)." },
+  { icon: "globe", title: "Sobre o grupo", text: "O <strong>CORTIS</strong> é um grupo da <strong>BigHit Music (HYBE)</strong>, estreado em <strong>2025</strong>, com 5 membros — o 3º grupo do selo, depois de BTS e TXT. O nome significa <strong>COLOR OUTSIDE THE LINES</strong>." },
+  { icon: "users", title: "Os membros", text: "<strong>Martin</strong> (líder, produtor)<br><strong>James</strong> (o mais velho, coreógrafo)<br><strong>Juhoon</strong> (dançarino)<br><strong>Seonghyeon</strong> (maknae)<br><strong>Keonho</strong> (maknae, o mais novo)" },
+  { icon: "disc", title: "Discografia rápida", text: "<strong>2025:</strong> GO! · What You Want · FaSHioN · COLOR OUTSIDE THE LINES (1º EP)<br><strong>2026:</strong> GREENGREEN (2º EP · faixa-título REDRED; inclui TNT e ACAI) · Mention Me (OST)" },
+  { icon: "heart", title: "Como apoiar", text: "Faça <strong>streaming</strong> nas plataformas, assista aos MVs no YouTube e acompanhe o grupo nas redes oficiais. // TODO: confirmar canais oficiais." },
   {
-    icon: "📖", title: "Glossário COER", glossary: [
+    icon: "book", title: "Glossário COER", glossary: [
       { word: "COER", def: "Fandom: “COR” (de CORTIS) + “~ER”, ecoando “CORE” (núcleo) — os fãs como força central" }, // CONFIRMAR: fonte de fã, validar
       { word: "OT5", def: "Os 5 membros do grupo" },
       { word: "Maknae", def: "O(s) mais novo(s): Seonghyeon e Keonho" },
@@ -521,7 +523,7 @@ document.addEventListener('DOMContentLoaded', function () {
          <div class="disco-info">
            <div class="disco-name">${esc(a.name)}</div>
            <div class="disco-year">${esc(a.year)} · ${faixas}</div>
-           <div class="disco-track">▶ ${esc(a.titleTrack)}</div>
+           <div class="disco-track">${svgIcon('play', 'icon-xs')}${esc(a.titleTrack)}</div>
          </div>`;
       card.addEventListener('click', () => openAlbumDetail(i));
       grid.appendChild(card);
@@ -579,9 +581,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const blocoA = `<div class="reveal" style="margin-bottom:2.6rem">
         <div style="${sub}">“REDRED” — 11 vitórias em programas musicais</div>
         ${wrap(`<thead><tr><th style="${th}">#</th><th style="${th}">Data</th><th style="${th}">Programa</th></tr></thead><tbody>${rowsA}</tbody>`)}
-        <div style="background:color-mix(in srgb, var(--stext) 10%, transparent);border:1px solid color-mix(in srgb, var(--stext) 30%, transparent);border-radius:14px;padding:1rem 1.2rem;margin-top:1.2rem;display:flex;flex-direction:column;gap:.5rem;font-size:.86rem;color:var(--stext);line-height:1.55">
-          <div>🏆 <strong>Grand slam:</strong> venceu nos 5 principais programas — Show Champion, M Countdown, Music Bank, Show! Music Core e Inkigayo.</div>
-          <div>👑 <strong>Triple crown</strong> no Show! Music Core (3 vitórias) e também no Inkigayo (3 vitórias).</div>
+        <div class="callout">
+          <p class="callout-row">${svgIcon('trophy')}<span><strong>Grand slam:</strong> venceu nos 5 principais programas — Show Champion, M Countdown, Music Bank, Show! Music Core e Inkigayo.</span></p>
+          <p class="callout-row">${svgIcon('crown')}<span><strong>Triple crown</strong> no Show! Music Core (3 vitórias) e também no Inkigayo (3 vitórias).</span></p>
         </div>
       </div>`;
 
@@ -609,7 +611,7 @@ document.addEventListener('DOMContentLoaded', function () {
            <div class="mv-featured-thumb" id="mvFeatThumb">
              ${thumb}
              <div class="mv-featured-overlay">
-               <button class="mv-featured-play" id="mvPlayBtn" type="button" aria-label="Assistir ${esc(first.title)}">▶</button>
+               <button class="mv-featured-play" id="mvPlayBtn" type="button" aria-label="Assistir ${esc(first.title)}">${svgIcon('play')}</button>
                <div class="mv-featured-info">
                  <span class="mv-featured-badge">${esc(first.badge || 'Destaque')}</span>
                  <div class="mv-featured-title">${esc(first.title)}</div>
@@ -646,8 +648,8 @@ document.addEventListener('DOMContentLoaded', function () {
         ? `<img src="https://img.youtube.com/vi/${mv.id}/mqdefault.jpg" alt="${esc(mv.title)}" loading="lazy">`
         : mvFallbackThumb(mv.title);
       card.innerHTML =
-        `<div class="mv-thumb">${thumb}<div class="mv-play"><span>▶</span></div></div>
-         <div class="mv-info"><div class="mv-title">${esc(mv.title)}</div><div class="mv-year">${esc(mv.year)}</div>${mv.views ? `<div class="mv-views">▶ ${esc(mv.views)}</div>` : ''}</div>`;
+        `<div class="mv-thumb">${thumb}<div class="mv-play">${svgIcon('play')}</div></div>
+         <div class="mv-info"><div class="mv-title">${esc(mv.title)}</div><div class="mv-year">${esc(mv.year)}</div>${mv.views ? `<div class="mv-views">${svgIcon('play', 'icon-xs')}${esc(mv.views)}</div>` : ''}</div>`;
       mvsCarousel.appendChild(card);
     });
   }
@@ -692,9 +694,9 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="gemeo-traits">${g.traits.map(t => `<div class="gemeo-trait">${t}</div>`).join('')}</div>
       </article>`;
     const truque =
-      `<div style="max-width:720px;margin:1.6rem auto 0;background:color-mix(in srgb, var(--stext) 10%, transparent);border:1px solid color-mix(in srgb, var(--stext) 30%, transparent);border-radius:16px;padding:1.2rem 1.4rem">
-        <div style="font-family:'Anton',sans-serif;letter-spacing:.04em;color:var(--saccent);font-size:1.05rem;margin-bottom:.6rem">⚡ Truque rápido</div>
-        <div style="display:flex;flex-direction:column;gap:.45rem">${gemeos.truque.map(t => `<div style="font-size:.9rem;color:var(--stext);line-height:1.5">${t}</div>`).join('')}</div>
+      `<div class="callout callout-boxed">
+        <div class="callout-title">${svgIcon('zap')}Truque rápido</div>
+        ${gemeos.truque.map(t => `<p class="callout-line">${t}</p>`).join('')}
       </div>`;
     c.innerHTML =
       `<p style="max-width:720px;margin:0 auto 2rem;text-align:center;font-size:.92rem;color:var(--stext2);line-height:1.85">${gemeos.intro}</p>
@@ -711,7 +713,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `<article class="cortisball-card reveal">
            ${it.img
              ? `<img class="cortisball-img" src="${esc(it.img)}" alt="Cortis Ball ${esc(it.name)}" loading="lazy" onerror="this.style.display='none'">`
-             : `<div class="cortisball-img" style="display:flex;align-items:center;justify-content:center;font-size:2.4rem">🟢</div>`}
+             : `<div class="cortisball-img cortisball-img-empty">${svgIcon('sphere')}</div>`}
            <div class="cortisball-name">${esc(it.name)}</div>
            <div class="cortisball-member">${esc(it.rep)}</div>
          </article>`).join('')}</div>`;
@@ -739,7 +741,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function renderCoer() {
     const c = document.getElementById('novosCoerGrid'); if (!c) return;
     c.innerHTML = guiaNovosCoer.map(card => {
-      let inner = `<div class="coer-icon">${card.icon}</div><div class="coer-title">${esc(card.title)}</div>`;
+      let inner = `<div class="coer-icon">${svgIcon(card.icon)}</div><div class="coer-title">${esc(card.title)}</div>`;
       if (card.glossary) {
         inner += `<div class="coer-glossary">${card.glossary.map(g => `<div class="coer-term"><span class="coer-word">${esc(g.word)}</span><span class="coer-def">${g.def}</span></div>`).join('')}</div>`;
       } else {
@@ -828,7 +830,7 @@ document.addEventListener('DOMContentLoaded', function () {
     searchResults.innerHTML = hits.slice(0, 12).map(h => {
       const thumb = h.img
         ? `<img class="search-result-thumb" src="${esc(h.img)}" alt="" loading="lazy">`
-        : `<div class="search-result-thumb">${h.tag === 'Membro' ? '👤' : h.tag === 'Álbum' ? '💿' : h.tag === 'Curiosidade' ? '💡' : '🔗'}</div>`;
+        : `<div class="search-result-thumb search-result-thumb-empty">${svgIcon(h.tag === 'Membro' ? 'user' : h.tag === 'Álbum' ? 'disc' : h.tag === 'Curiosidade' ? 'bulb' : 'link')}</div>`;
       return `<button class="search-result-item" type="button" data-type="${h.type}" data-idx="${h.idx ?? ''}" data-anchor="${h.anchor || ''}">${thumb}<div class="search-result-info"><div class="search-result-title">${esc(h.title)}</div><div class="search-result-sub">${esc(h.sub || '')}</div></div><span class="search-result-tag">${esc(h.tag)}</span></button>`;
     }).join('');
   });

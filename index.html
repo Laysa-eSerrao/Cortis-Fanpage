@@ -15,7 +15,7 @@
   <meta property="og:url" content="https://laysa-eserrao.github.io/Cortis-Fanpage/" />
   <!-- TODO: adicionar og:image (URL absoluta) quando houver uma imagem oficial -->
 
-  <!-- Favicon (SVG inline — placeholder na cor do tema padrão) -->
+  <!-- Favicon -->
   <link rel="icon" href="assets/favicon-cortis.png" />
 
   <!-- Fontes: Anton (display marcante) + Inter (sans legível) -->
@@ -28,12 +28,40 @@
 </head>
 <body class="theme-green-light">
 
+<!-- ══════════ SPRITE DE ÍCONES (SVG inline · referenciado via <use href="#i-…">) ══════════ -->
+<svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <!-- interface -->
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16.2 16.2 21 21"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 7h17M3.5 12h17M3.5 17h17"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.8 12.6l4.6 4.6L19.4 6.9"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="M14.5 5.5 7.5 12l7 6.5"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="M9.5 5.5 16.5 12l-7 6.5"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15.4M13.4 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 20V4.6M6 10.6l6-6 6 6"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8.2 5.1 19 12 8.2 18.9Z" fill="currentColor" stroke="none"/></symbol>
+  <!-- conteúdo -->
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M3.4 12h17.2"/><path d="M12 3.4c2.2 2.4 3.4 5.4 3.4 8.6S14.2 18.2 12 20.6C9.8 18.2 8.6 15.2 8.6 12S9.8 5.8 12 3.4Z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9.2" cy="8.4" r="3.4"/><path d="M3 20.2c.5-3.4 3.1-5.6 6.2-5.6s5.7 2.2 6.2 5.6"/><path d="M16.4 5.4a3.4 3.4 0 0 1 0 6"/><path d="M17.9 14.9c1.8.7 3 2.6 3.2 5.3"/></symbol>
+  <symbol id="i-disc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="2.6"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.4S3.8 15.4 3.8 9.6a4.6 4.6 0 0 1 8.2-2.8 4.6 4.6 0 0 1 8.2 2.8c0 5.8-8.2 10.8-8.2 10.8Z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4.8h5.6A2.4 2.4 0 0 1 12 7.2v12.2a2.1 2.1 0 0 0-2.1-2.1H4Z"/><path d="M20 4.8h-5.6A2.4 2.4 0 0 0 12 7.2v12.2a2.1 2.1 0 0 1 2.1-2.1H20Z"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7.6 4.6h8.8v4.2a4.4 4.4 0 0 1-8.8 0Z"/><path d="M7.6 5.9H5v1.5a3.3 3.3 0 0 0 3.1 3.3"/><path d="M16.4 5.9H19v1.5a3.3 3.3 0 0 1-3.1 3.3"/><path d="M12 13.2v3.3"/><path d="M8.4 19.4h7.2"/></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3.6 8.2l3.6 2.9L12 5l4.8 6.1 3.6-2.9-1.7 10.4H5.3Z"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13.4 3.2 5.7 13.5h5.1l-.9 7.3 7.7-10.2h-5.1Z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.4" r="3.6"/><path d="M5 20.3c.6-3.6 3.5-5.9 7-5.9s6.4 2.3 7 5.9"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M12 3.4a5.6 5.6 0 0 0-3.2 10.2v2.3h6.4v-2.3A5.6 5.6 0 0 0 12 3.4Z"/><path d="M10.2 19.2h3.6"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10.4 13.6a3.4 3.4 0 0 0 4.8 0l3-3a3.4 3.4 0 0 0-4.8-4.8l-1.2 1.2"/><path d="M13.6 10.4a3.4 3.4 0 0 0-4.8 0l-3 3a3.4 3.4 0 0 0 4.8 4.8l1.2-1.2"/></symbol>
+  <symbol id="i-sphere" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M8.4 5.7a8.6 8.6 0 0 0 0 12.6"/></symbol>
+</svg>
+
 <!-- Skip link (acessibilidade) -->
 <a class="skip-link" href="#membros">Pular para o conteúdo</a>
 
 <!-- ══════════ INTRO ══════════ -->
 <div id="introScreen">
-  <button id="introSkipBtn" class="intro-skip" aria-label="Pular introdução">Pular ›</button>
+  <button id="introSkipBtn" class="intro-skip" aria-label="Pular introdução">Pular<svg class="icon icon-xs" aria-hidden="true"><use href="#i-chevron-right"></use></svg></button>
   <img class="intro-logo-img js-logo-full" src="assets/cortis-logo-full-38302F.png" alt="CORTIS" />
   <div class="intro-sub">COLOR OUTSIDE THE LINES · BigHit Music · Est. 2025</div>
   <div class="intro-bar"><div class="intro-fill"></div></div>
@@ -65,28 +93,28 @@
               aria-haspopup="menu" aria-expanded="false" aria-controls="themeMenuList"
               title="Escolher modo (tema de cor)">
         <span class="theme-menu-label">Modos</span>
-        <span class="theme-menu-chevron" aria-hidden="true">▾</span>
+        <span class="theme-menu-chevron" aria-hidden="true"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-chevron-down"></use></svg></span>
       </button>
       <div id="themeMenuList" class="theme-menu-list" role="menu" aria-label="Selecionar modo de cor">
         <button class="theme-option" role="menuitemradio" aria-checked="false" data-theme="verde-claro"  type="button">
-          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">Claro</span><span class="theme-option-check" aria-hidden="true">✓</span>
+          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">Claro</span><span class="theme-option-check" aria-hidden="true"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
         </button>
         <button class="theme-option" role="menuitemradio" aria-checked="false" data-theme="verde-escuro" type="button">
-          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">Escuro</span><span class="theme-option-check" aria-hidden="true">✓</span>
+          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">Escuro</span><span class="theme-option-check" aria-hidden="true"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
         </button>
         <button class="theme-option" role="menuitemradio" aria-checked="false" data-theme="redred"       type="button">
-          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">REDRED</span><span class="theme-option-check" aria-hidden="true">✓</span>
+          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">REDRED</span><span class="theme-option-check" aria-hidden="true"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
         </button>
         <button class="theme-option" role="menuitemradio" aria-checked="false" data-theme="acai"         type="button">
-          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">ACAI</span><span class="theme-option-check" aria-hidden="true">✓</span>
+          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">ACAI</span><span class="theme-option-check" aria-hidden="true"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
         </button>
         <button class="theme-option" role="menuitemradio" aria-checked="false" data-theme="tnt"          type="button">
-          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">TNT</span><span class="theme-option-check" aria-hidden="true">✓</span>
+          <span class="theme-dot" aria-hidden="true"></span><span class="theme-option-name">TNT</span><span class="theme-option-check" aria-hidden="true"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"></use></svg></span>
         </button>
       </div>
     </div>
-    <button class="nav-search-btn" id="searchOpenBtn" title="Buscar" aria-label="Abrir busca">🔍</button>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+    <button class="nav-search-btn" id="searchOpenBtn" title="Buscar" aria-label="Abrir busca"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg></button>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu"><svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg></button>
   </div>
 </nav>
 
@@ -109,7 +137,7 @@
       <span>Keonho</span>
     </div>
     <div class="hero-btns">
-      <a href="#membros" class="btn btn-primary">Conhecer os membros →</a>
+      <a href="#membros" class="btn btn-primary">Conhecer os membros<svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
       <a href="#discografia" class="btn btn-outline">Ver discografia</a>
     </div>
   </div>
@@ -188,9 +216,9 @@
   </div>
   <div id="mvsFeatured"><!-- MV em destaque, preenchido pelo script.js --></div>
   <div class="mvs-wrap">
-    <button class="mvs-btn-left" id="mvsPrev" type="button" aria-label="Ver MVs anteriores">‹</button>
+    <button class="mvs-btn-left" id="mvsPrev" type="button" aria-label="Ver MVs anteriores"><svg class="icon" aria-hidden="true"><use href="#i-chevron-left"></use></svg></button>
     <div id="mvsCarousel" class="mvs-scroll"><!-- preenchido pelo script.js --></div>
-    <button class="mvs-btn-right" id="mvsNext" type="button" aria-label="Ver próximos MVs">›</button>
+    <button class="mvs-btn-right" id="mvsNext" type="button" aria-label="Ver próximos MVs"><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg></button>
   </div>
 </section>
 
@@ -278,7 +306,7 @@
 <!-- Modal de membro -->
 <div id="memberModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-label="Perfil do membro">
   <div class="member-modal">
-    <button class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar perfil do membro">✕</button>
+    <button class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar perfil do membro"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
     <div class="modal-img-side" id="modalImgSide"></div>
     <div class="modal-info-side" id="modalInfoSide"></div>
   </div>
@@ -287,23 +315,23 @@
 <!-- Modal de álbum (discografia detalhada) -->
 <div id="albumModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-label="Detalhes do álbum">
   <div class="album-modal">
-    <button class="modal-close-btn" id="albumModalCloseBtn" aria-label="Fechar detalhes do álbum">✕</button>
+    <button class="modal-close-btn" id="albumModalCloseBtn" aria-label="Fechar detalhes do álbum"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
     <div class="album-modal-body" id="albumModalBody"></div>
   </div>
 </div>
 
 <!-- Lightbox da galeria -->
 <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
-  <button id="lbClose" class="lb-btn lb-close" aria-label="Fechar imagem">✕</button>
+  <button id="lbClose" class="lb-btn lb-close" aria-label="Fechar imagem"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
   <img id="lbImg" src="" alt="" />
 </div>
 
 <!-- Busca global -->
 <div class="search-wrap" id="searchWrap" role="dialog" aria-modal="true" aria-label="Busca">
   <div class="search-input-wrap">
-    <span class="search-input-icon" aria-hidden="true">🔍</span>
+    <span class="search-input-icon" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg></span>
     <input class="search-input" id="searchInput" type="text" placeholder="Buscar membros, álbuns, curiosidades..." autocomplete="off" aria-label="Campo de busca" />
-    <button class="search-close" id="searchCloseBtn" aria-label="Fechar busca">✕</button>
+    <button class="search-close" id="searchCloseBtn" aria-label="Fechar busca"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
   </div>
   <div class="search-results" id="searchResults"></div>
 </div>
@@ -313,7 +341,7 @@
 <aside class="drawer" id="drawer" aria-label="Menu de navegação">
   <div class="drawer-header">
     <span class="drawer-logo">CORTIS</span>
-    <button class="drawer-close" id="drawerClose" aria-label="Fechar menu">✕</button>
+    <button class="drawer-close" id="drawerClose" aria-label="Fechar menu"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
   </div>
   <nav class="drawer-nav">
     <a href="#membros">Membros</a>
@@ -334,7 +362,7 @@
 </aside>
 
 <!-- Voltar ao topo -->
-<button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">↑</button>
+<button id="backToTop" class="back-to-top" aria-label="Voltar ao topo"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></button>
 
 </body>
 </html>

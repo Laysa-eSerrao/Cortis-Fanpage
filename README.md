@@ -18,6 +18,22 @@ os "gêmeos" Seonghyeon e Keonho, a Cortis Ball, a **lightstick oficial** e um g
 
 Site estático puro, sem etapa de build e sem dependências.
 
+## Ícones
+
+O site **não usa emojis**. Toda a iconografia vem de um **sprite SVG inline** declarado no topo do
+`<body>` do [index.html](index.html) (`<svg class="icon-sprite">` com um `<symbol id="i-…">` por ícone),
+consumido via `<use href="#i-nome">`.
+
+- **No HTML:** `<svg class="icon"><use href="#i-search"></use></svg>`
+- **No JS:** o helper `svgIcon(nome, classe)` ([script.js](script.js)) monta o mesmo markup.
+- **Estilo:** a classe `.icon` define traço (`stroke: currentColor`, `fill: none`) e tamanho relativo
+  (`1.15em`), com as variantes `.icon-xs`, `.icon-sm` e `.icon-lg`. Como a cor vem de `currentColor`,
+  os ícones acompanham os 5 temas sem override.
+- A página [404.html](404.html) não carrega o sprite, então usa um SVG inline direto.
+
+Marcadores de lista (fatos do modal, traços dos gêmeos, lista da lightstick) também são geométricos
+(um traço via `::before`), não caracteres tipográficos.
+
 ## Responsivo (mobile)
 
 Layout **mobile-first** com breakpoints em **600px**, **768px** e **1024px**. Testado em ~375px e ~414px.
@@ -32,7 +48,7 @@ Layout **mobile-first** com breakpoints em **600px**, **768px** e **1024px**. Te
 ## Os 5 temas
 
 Visual **vintage/Y2K**. O tema troca o site inteiro (fundo, superfícies, texto e accent) via classe no `<body>`.
-O seletor fica na navbar num botão **"Modos"** (🎨 + chevron) que abre um dropdown com os 5 modos —
+O seletor fica na navbar num botão **"Modos"** (rótulo + chevron) que abre um dropdown com os 5 modos —
 **Claro · Escuro · REDRED · ACAI · TNT** —, cada um com uma bolinha da cor do tema e o modo ativo
 marcado com ✓. O dropdown fecha ao selecionar, ao clicar fora ou com **Escape**, é navegável por teclado
 (`aria-expanded`/setas) e respeita `prefers-reduced-motion`. O tema é mantido **em memória** durante a
